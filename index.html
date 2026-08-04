@@ -343,7 +343,7 @@ function runMatch() {
   const riskFatal = [];
   const riskWarn = [];
   if (overdue_cont >= 3 || overdue_cum >= 6) riskFatal.push('连三累六：命中致命红线');
-  if (cc > ninety) riskWarn.push('信用卡使用率 > 90%');
+  if (cc > 90) riskWarn.push('信用卡使用率 > 90%');
   if (income > 0 && debt > 0 && debt / income > 0.5) riskWarn.push('销贷比 > 50%');
   if (q6 > 12) riskWarn.push('近6月查询 > 12次');
   
