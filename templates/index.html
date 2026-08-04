@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<title>Lisa · 融资顾问</title>
+<style>
+:root{
+  --bg:#f4f5f7;--card:#fff;--ink:#1f2329;--sub:#6b7280;--line:#e5e7eb;
+  --T1:#16a34a;--T2:#2563eb;--T3:#ea580c;--T4:#6b7280;--red:#dc2626;--accent:#2563eb;
+  --chip:#eef2ff;--radius:14px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.6}
+.app{max-width:960px;margin:0 auto;padding:0 12px;padding-bottom:80px}
+header.top{position:sticky;top:0;z-index:30;background:rgba(244,245,247,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:10px 0 6px}
+.brand{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.brand h1{font-size:18px;margin:0;font-weight:800;letter-spacing:.3px}
+.brand .sub{font-size:12px;color:var(--sub)}
+.stats-row{display:flex;gap:8px;overflow-x:auto;padding:8px 0;-webkit-overflow-scrolling:touch}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px 12px;text-align:center;flex:none;min-width:72px}
+.stat b{font-size:20px;display:block;line-height:1.2}
+.stat span{font-size:11px;color:var(--sub)}
+.stat.urgent b{color:var(--red)}
+.stat.overdue{background:#fff5f5;border-color:#fecaca}
+.stat.overdue b{color:var(--red)}
+.search-wrap{position:relative;margin:8px 0}
+.search-wrap svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--sub)}
+input.search{width:100%;min-height:46px;padding:0 14px 0 42px;border:1px solid var(--line);border-radius:14px;background:#fff;font-size:16px;font-family:inherit}
+input.search:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.tabs{display:flex;gap:4px;position:sticky;top:116px;z-index:20;background:var(--bg);padding:6px 0;border-bottom:1px solid var(--line);overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tab{flex:1;min-width:60px;text-align:center;padding:9px 4px;border-radius:10px;font-size:14px;font-weight:700;color:var(--sub);cursor:pointer;white-space:nowrap;border:1px solid transparent}
+.tab.active{background:#fff;color:var(--accent);border-color:var(--line);box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.view{display:none;animation:fade .15s}
+.view.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:13px;margin-bottom:10px;box-shadow:0 1px 2px rgba(16,24,40,.03)}
+.card.tap{cursor:pointer;transition:transform .1s}
+.card.tap:active{transform:scale(.985)}
+.card h3{margin:0 0 4px;font-size:16px}
+.muted{color:var(--sub);font-size:13px}
+.section-title{font-size:12px;font-weight:800;color:var(--sub);margin:14px 0 6px;letter-spacing:1px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.badge{display:inline-flex;align-items:center;font-size:11px;font-weight:700;padding:2px 8px;border-radius:99px}
+.b-T1{background:#dcfce7;color:var(--T1)}.b-T2{background:#dbeafe;color:var(--T2)}
+.b-T3{background:#ffedd5;color:var(--T3)}.b-T4{background:#f3f4f6;color:var(--T4)}
+.b-other{background:#f3f4f6;color:#374151}.b-red{background:#fee2e2;color:var(--red)}
+.b-urg{background:var(--red);color:#fff}.b-do{background:#fef3c7;color:#92400e}
+.b-wait{background:#e0e7ff;color:#3730a3}.b-pause{background:#e5e7eb;color:#4b5563}
+.b-active{background:#dcfce7;color:var(--T1)}
+.adm-tab.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.chip{display:inline-block;background:var(--chip);color:#3730a3;font-size:11px;padding:2px 7px;border-radius:8px;margin:1px 3px 1px 0}
+.kv{display:flex;gap:10px;flex-wrap:wrap;margin:4px 0;font-size:12px}
+.kv b{color:var(--sub);font-weight:600}
+.overdue{background:#fff5f5;border:1px solid #fecaca}
+.overdue .flag{color:var(--red);font-weight:800;font-size:12px}
+.bar{flex:1;height:8px;background:#eef0f3;border-radius:99px;overflow:hidden;min-width:60px}
+.bar>i{display:block;height:100%;border-radius:99px}
+.bankrow{display:flex;align-items:center;gap:8px;padding:9px 0;border-bottom:1px dashed var(--line)}
+.bankrow:last-child{border-bottom:0}
+.bnum{width:30px;text-align:right;font-weight:800;font-size:13px;color:var(--sub)}
+.expand{display:none;margin-top:8px;padding-top:8px;border-top:1px dashed var(--line);white-space:pre-wrap;font-size:13px;color:#374151;max-height:400px;overflow:auto;background:#fafafa;border-radius:10px;padding:10px}
+.expand.show{display:block}
+.linkbtn{background:none;border:none;color:var(--accent);font-weight:700;cursor:pointer;font-size:14px;padding:4px 6px;min-height:36px}
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.filters select{min-height:38px;border:1px solid var(--line);border-radius:10px;padding:0 8px;background:#fff;font-size:14px;font-family:inherit;flex:1;min-width:100px}
+.empty{text-align:center;padding:40px 20px;color:var(--sub)}
+.loading{text-align:center;padding:20px;color:var(--sub)}
+.product{background:#f9fafb;border:1px solid var(--line);border-radius:10px;padding:10px;margin:6px 0;font-size:13px}
+.product b{color:var(--ink)}
+.modal{position:fixed;inset:0;z-index:50;display:none;background:rgba(0,0,0,.5)}
+.modal.show{display:flex;align-items:flex-end;justify-content:center}
+.sheet{background:#fff;border-radius:20px 20px 0 0;width:100%;max-width:960px;max-height:90vh;overflow:auto;animation:up .2s}
+@keyframes up{from{transform:translateY(100%)}to{transform:none}}
+.sheet-head{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);padding:14px 16px;display:flex;justify-content:space-between;align-items:center;border-radius:20px 20px 0 0}
+.sheet-head h3{margin:0;font-size:17px}
+.sheet-body{padding:16px}
+.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:#1f2329;color:#fff;padding:10px 18px;border-radius:99px;font-size:14px;z-index:60;opacity:0;transition:opacity .25s;pointer-events:none}
+.toast.show{opacity:.95}
+@media(min-width:769px){.modal.show{align-items:center}.sheet{border-radius:20px;max-width:600px}}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="brand">
+      <h1>Lisa</h1><span class="sub">融资顾问作战台</span>
+    </div>
+    <div class="stats-row" id="statsRow"></div>
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input class="search" id="globalSearch" placeholder="搜客户名 / 标签 / 银行…" autocomplete="off">
+    </div>
+  </header>
+
+  <nav class="tabs" id="tabs">
+    <div class="tab active" data-v="today">今日</div>
+    <div class="tab" data-v="clients">客户</div>
+    <div class="tab" data-v="banks">银行</div>
+    <div class="tab" data-v="match">匹配</div>
+    <div class="tab" data-v="admin">管理</div>
+  </nav>
+
+  <section class="view active" id="v-today">
+    <div class="section-title" id="todayDate" style="font-size:14px;color:var(--accent)"></div>
+    <div id="todayList" class="loading">加载中…</div>
+  </section>
+  <section class="view" id="v-clients">
+    <div class="row" style="justify-content:space-between;align-items:center;margin-bottom:8px">
+      <div class="filters" style="flex:1;margin-bottom:0">
+        <select id="fTag"><option value="">全部标签</option></select>
+        <select id="fBank"><option value="">全部银行</option></select>
+        <select id="fActive"><option value="">全部客户</option><option value="1">仅在做</option></select>
+      </div>
+      <button class="btn primary" id="btnAddClient" style="min-height:38px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-weight:700;white-space:nowrap;margin-left:6px">+ 新增客户</button>
+    </div>
+    <div id="cliList" class="loading">加载中…</div>
+  </section>
+  <section class="view" id="v-banks">
+    <div class="filters">
+      <select id="fTier">
+        <option value="">全部层级</option>
+        <option value="T1">T1 首选</option>
+        <option value="T2">T2 次选</option>
+        <option value="T3">T3 补充</option>
+        <option value="T4">T4 可选</option>
+      </select>
+    </div>
+    <div id="bankList" class="loading">加载中…</div>
+  </section>
+  <section class="view" id="v-match">
+    <div class="card">
+      <h3 style="margin:0 0 8px">智能匹配引擎</h3>
+      <p class="muted" style="margin:0 0 12px">输入客户条件，自动匹配可推银行并按通过率排序</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <div><label class="muted">法人年龄</label><input type="number" id="mAge" placeholder="如 45" style="width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 10px;font-size:15px"></div>
+        <div><label class="muted">年开票(万)</label><input type="number" id="mIncome" placeholder="如 500" style="width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 10px;font-size:15px"></div>
+        <div><label class="muted">年纳税(万)</label><input type="number" id="mTax" placeholder="如 10" style="width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 10px;font-size:15px"></div>
+        <div><label class="muted">纳税级别</label><select id="mGrade" style="width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 10px;font-size:15px"><option value="">选</option><option>A</option><option>B</option><option>C</option><option>M</option><option>D</option></select></div>
+        <div><label class="muted">近3月查询</label><input type="number" id="mQ3" placeholder="如 3" style="width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 10px;font-size:15px"></div>
+        <div><label class="muted">近6月查询</label><input type="number" id="mQ6" placeholder="如 8" style="width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 10px;font-size:15px"></div>
+        <div><label class="muted">当前机构数</label><input type="number" id="mInst" placeholder="如 5" style="width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 10px;font-size:15px"></div>
+        <div><label class="muted">总负债(万)</label><input type="number" id="mDebt" placeholder="如 300" style="width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 10px;font-size:15px"></div>
+        <div><label class="muted">信用卡使用率%</label><input type="number" id="mCc" placeholder="如 30" style="width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 10px;font-size:15px"></div>
+        <div><label class="muted">销贷比%</label><input type="number" id="mSale" placeholder="如 40" style="width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 10px;font-size:15px"></div>
+        <div style="display:flex;align-items:flex-end;gap:8px">
+          <label style="display:flex;align-items:center;gap:4px;font-size:13px;cursor:pointer"><input type="checkbox" id="mGaoxin" style="width:18px;height:18px"> 国高新</label>
+          <label style="display:flex;align-items:center;gap:4px;font-size:13px;cursor:pointer"><input type="checkbox" id="mOverdue" style="width:18px;height:18px"> 有逾期</label>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px">
+          <div><label class="muted">连三（近2年连续逾期次数）</label><input type="number" id="mOC" placeholder="如 0" style="width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 10px;font-size:15px"></div>
+          <div><label class="muted">累六（近2年累计逾期次数）</label><input type="number" id="mOC6" placeholder="如 0" style="width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 10px;font-size:15px"></div>
+        </div>
+        <div class="muted" style="margin-top:6px;font-size:12px">风控预检：连三≥3或累六≥6 为致命红线（一票否决所有银行）；信用卡>90%、销贷比>50%、近6月查询>12 为高风险项</div>
+      </div>
+      <div style="margin-top:10px">
+        <label class="muted">排除银行（逗号分隔，含存量/征信查询/已还清）</label>
+        <input type="text" id="mExclude" placeholder="如 工商银行,建设银行" style="width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 10px;font-size:15px;margin-top:4px">
+      </div>
+      <button class="btn primary" id="btnMatch" style="margin-top:12px;width:100%;min-height:46px;background:var(--accent);color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer">开始匹配</button>
+    </div>
+    <div id="matchResults"></div>
+  </section>
+  <section class="view" id="v-admin">
+    <div class="card">
+      <h3 style="margin:0 0 4px">规则与银行政策编辑</h3>
+      <p class="muted" style="margin:0 0 10px;font-size:12px">所有改动保存后自动写盘同步，本地和在线版即时生效，无需重启或重新发布</p>
+      <div class="row" style="gap:6px;margin-bottom:10px">
+        <button class="adm-tab active" data-at="tier" style="flex:1;min-height:38px;border:1px solid var(--line);border-radius:10px;background:#fff;font-weight:700;font-size:13px;cursor:pointer">分层/获贷率/红线</button>
+        <button class="adm-tab" data-at="product" style="flex:1;min-height:38px;border:1px solid var(--line);border-radius:10px;background:#fff;font-weight:700;font-size:13px;cursor:pointer">银行产品政策</button>
+        <button class="adm-tab" data-at="active" style="flex:1;min-height:38px;border:1px solid var(--line);border-radius:10px;background:#fff;font-weight:700;font-size:13px;cursor:pointer">在做进展</button>
+      </div>
+
+      <div id="admTier">
+        <div class="section-title">银行分层（T1-T4）</div>
+        <div id="tierList" class="loading">加载中…</div>
+        <div class="section-title">获贷率</div>
+        <div id="rateList" class="loading">加载中…</div>
+        <div class="section-title">红线禁推银行</div>
+        <div id="redList" class="loading">加载中…</div>
+        <button id="btnSaveRules" style="margin-top:10px;width:100%;min-height:44px;background:var(--accent);color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer">保存规则（写盘同步）</button>
+      </div>
+
+      <div id="admProduct" style="display:none">
+        <div class="row" style="justify-content:space-between;align-items:center;margin-bottom:8px">
+          <span class="muted" style="font-size:13px">选择银行编辑其产品，或新增一款产品</span>
+          <select id="prodBankSel" style="min-height:36px;border:1px solid var(--line);border-radius:10px;padding:0 8px;font-size:14px;font-family:inherit;min-width:140px"></select>
+        </div>
+        <div id="prodForm" style="display:grid;gap:8px"></div>
+        <div class="section-title">该银行现有产品</div>
+        <div id="prodExisting"></div>
+      </div>
+
+      <div id="admActive" style="display:none">
+        <div class="muted" style="font-size:13px;margin-bottom:8px">更新在做客户的进展、状态、下一步动作</div>
+        <div class="row" style="gap:6px;margin-bottom:8px">
+          <select id="actNameSel" style="flex:1;min-height:38px;border:1px solid var(--line);border-radius:10px;padding:0 8px;font-size:14px;font-family:inherit"></select>
+        </div>
+        <div style="display:grid;gap:8px">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+            <div><label class="muted">状态</label><select id="actStatus" style="width:100%;min-height:38px;border:1px solid var(--line);border-radius:10px;padding:0 8px;font-size:14px;font-family:inherit"><option>紧急</option><option>推进中</option><option selected>待反馈</option><option>暂停</option></select></div>
+            <div><label class="muted">截止日期</label><input type="date" id="actDeadline" style="width:100%;min-height:38px;border:1px solid var(--line);border-radius:10px;padding:0 8px;font-size:14px;font-family:inherit"></div>
+            <div><label class="muted">逾期</label><select id="actOverdue" style="width:100%;min-height:38px;border:1px solid var(--line);border-radius:10px;padding:0 8px;font-size:14px;font-family:inherit"><option value="0">否</option><option value="1">是</option></select></div>
+          </div>
+          <div><label class="muted">进展</label><textarea id="actProgress" style="width:100%;min-height:80px;border:1px solid var(--line);border-radius:10px;padding:8px;font-size:14px;font-family:inherit;resize:vertical"></textarea></div>
+          <div><label class="muted">下一步</label><input id="actNext" style="width:100%;min-height:38px;border:1px solid var(--line);border-radius:10px;padding:0 10px;font-size:14px;font-family:inherit"></div>
+          <button id="btnSaveActive" style="width:100%;min-height:44px;background:var(--accent);color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer">保存进展（写盘同步）</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="modal" id="modal"><div class="sheet" id="sheet"></div></div>
+
+<div class="modal" id="addModal"><div class="sheet">
+  <div class="sheet-head">
+    <h3>新增客户</h3>
+    <button class="linkbtn" onclick="$('#addModal').classList.remove('show')">关闭</button>
+  </div>
+  <div class="sheet-body">
+    <div style="display:grid;gap:10px">
+      <div class="section-title">基础信息</div>
+      <input id="acName" placeholder="客户名称 *" style="width:100%;min-height:42px;border:1px solid var(--line);border-radius:10px;padding:0 10px;font-size:15px;font-family:inherit">
+      <input id="acTag" placeholder="企业标签（逗号分隔，如 国高新,省专精特新）" style="width:100%;min-height:42px;border:1px solid var(--line);border-radius:10px;padding:0 10px;font-size:15px;font-family:inherit">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <input type="number" id="acEstablishedYear" placeholder="成立年份 如 2020" style="width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 8px;font-size:15px;font-family:inherit">
+        <input type="number" id="acShareholding" placeholder="法人持股% 如 100" style="width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 8px;font-size:15px;font-family:inherit">
+      </div>
+      <div class="section-title">客户画像</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+        <input id="acLegalName" placeholder="法人姓名" style="width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 8px;font-size:15px;font-family:inherit">
+        <input type="number" id="acAge" placeholder="法人年龄" style="width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 8px;font-size:15px;font-family:inherit">
+        <select id="acDualSign" style="width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 8px;font-size:15px;font-family:inherit"><option value="">是否双签</option><option value="true">是</option><option value="false">否</option></select>
+      </div>
+      <div class="section-title">经营数据</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+        <input type="number" id="acIncome" placeholder="年开票(万)" style="width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 8px;font-size:15px;font-family:inherit">
+        <input type="number" id="acTax" placeholder="年纳税(万)" style="width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 8px;font-size:15px;font-family:inherit">
+        <select id="acTaxGrade" style="width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 8px;font-size:15px;font-family:inherit"><option value="">纳税级别</option><option>A</option><option>B</option><option>C</option><option>M</option><option>D</option></select>
+      </div>
+      <div class="section-title">负债与征信</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <input type="number" id="acDebtTotal" placeholder="企业总负债(万)" style="width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 8px;font-size:15px;font-family:inherit">
+        <input type="number" id="acCcUsage" placeholder="信用卡使用率%" style="width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 8px;font-size:15px;font-family:inherit">
+        <input type="number" id="acQuery3m" placeholder="近3月查询次数" style="width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 8px;font-size:15px;font-family:inherit">
+        <input type="number" id="acQuery6m" placeholder="近6月查询次数" style="width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 8px;font-size:15px;font-family:inherit">
+        <input type="number" id="acQuery12m" placeholder="近12月查询次数" style="width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 8px;font-size:15px;font-family:inherit">
+        <input type="number" id="acSaleRatio" placeholder="销贷比%" style="width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 8px;font-size:15px;font-family:inherit">
+        <input type="number" id="acInst" placeholder="企业机构数" style="width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 8px;font-size:15px;font-family:inherit">
+        <input type="number" id="acBank" placeholder="在贷银行数" style="width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 8px;font-size:15px;font-family:inherit">
+        <input type="number" id="acOverdueCont" placeholder="连三次数" style="width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 8px;font-size:15px;font-family:inherit">
+        <input type="number" id="acOverdueCum" placeholder="累六次数" style="width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 8px;font-size:15px;font-family:inherit">
+      </div>
+      <input id="acInstitutions" placeholder="在贷机构（逗号分隔）" style="width:100%;min-height:42px;border:1px solid var(--line);border-radius:10px;padding:0 10px;font-size:15px;font-family:inherit">
+      <label style="display:flex;align-items:center;gap:6px;font-size:14px;cursor:pointer"><input type="checkbox" id="acOverdue" style="width:18px;height:18px"> 有逾期记录</label>
+      <div class="section-title">客户档案模板</div>
+      <div style="display:flex;gap:8px;margin-bottom:6px">
+        <button id="acGenTemplate" style="flex:1;min-height:38px;background:var(--chip);color:#3730a3;border:1px solid var(--line);border-radius:10px;font-weight:700;font-size:13px;cursor:pointer">从结构化字段生成模板</button>
+      </div>
+      <textarea id="acTemplate" placeholder="生成或粘贴客户完整档案模板（纯文字，必填）*" style="width:100%;min-height:160px;border:1px solid var(--line);border-radius:10px;padding:10px;font-size:14px;font-family:inherit;resize:vertical;line-height:1.7"></textarea>
+      <label style="display:flex;align-items:center;gap:6px;font-size:14px;cursor:pointer"><input type="checkbox" id="acActive" style="width:18px;height:18px"> 标记为在做客户（显示在今日作战区）</label>
+      <button class="btn primary" id="acSubmit" style="width:100%;min-height:46px;background:var(--accent);color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer">保存到工作台</button>
+      <div class="muted" style="font-size:12px;text-align:center">保存后工作台自动同步，模板数据自动提取为银行判断标准</div>
+    </div>
+  </div>
+</div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const $=s=>document.querySelector(s);const $$=s=>[...document.querySelectorAll(s)];
+const api=p=>fetch(p).then(r=>r.json());
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1500);}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+// ---- 导航 ----
+function show(v){$$('.tab').forEach(t=>t.classList.toggle('active',t.dataset.v===v));
+  $$('.view').forEach(s=>s.classList.toggle('active',s.id==='v-'+v));
+  if(v==='admin'&&!adminRules)loadAdmin();}
+$$('.tab').forEach(t=>t.onclick=()=>show(t.dataset.v));
+
+// ---- 统计 ----
+async function loadStats(){
+  const s=await api('/api/stats');
+  const items=[
+    {label:'客户',val:s.total_clients},
+    {label:'银行',val:s.total_banks},
+    {label:'产品',val:s.total_products},
+    {label:'在做',val:s.active_count},
+    {label:'紧急',val:s.urgent_count,cls:'urgent'},
+    {label:'逾期',val:s.overdue_count,cls:'overdue'},
+  ];
+  $('#statsRow').innerHTML=items.map(i=>`<div class="stat ${i.cls||''}"><b>${i.val}</b><span>${i.label}</span></div>`).join('');
+}
+
+// ---- 今日作战 ----
+const WEEK=['日','一','二','三','四','五','六'];
+function deadlineTag(deadline){
+  if(!deadline)return '';
+  const today=new Date();today.setHours(0,0,0,0);
+  const dl=new Date(deadline+'T00:00:00');
+  const days=Math.round((dl-today)/86400000);
+  if(days<0)return `<span class="flag">已逾期 ${Math.abs(days)} 天 · 需立即处理</span>`;
+  if(days===0)return `<span class="flag" style="color:#ea580c">今天截止</span>`;
+  if(days<=3)return `<span class="flag" style="color:#ea580c">剩 ${days} 天（${deadline.slice(5)}）</span>`;
+  return `<span class="muted">截止 ${deadline.slice(5)}（剩 ${days} 天）</span>`;
+}
+async function loadToday(){
+  const res=await api('/api/active');
+  const today=res.today;const data=res.items;
+  const d=new Date(today+'T00:00:00');
+  const hdr=$('#todayDate');if(hdr)hdr.textContent=`今天 ${today.slice(5).replace('-','/')} 周${WEEK[d.getDay()]}`;
+  const wrap=$('#todayList');wrap.innerHTML='';
+  if(!data.length){wrap.innerHTML='<div class="empty">暂无在做客户</div>';return;}
+  data.forEach(a=>{
+    const stCls={'紧急':'b-urg','推进中':'b-do','待反馈':'b-wait','暂停':'b-pause'}[a.status];
+    const isOver=deadlineTag(a.deadline).includes('已逾期');
+    const card=document.createElement('div');
+    card.className='card'+(isOver?' overdue':'');
+    card.innerHTML=`
+      <div class="row" style="justify-content:space-between">
+        <h3 style="margin:0">${esc(a.name)}</h3>
+        <span class="badge ${stCls}">${a.status}</span>
+      </div>
+      ${deadlineTag(a.deadline)}
+      <div class="muted" style="margin:5px 0"><b>进展：</b>${esc(a.progress)}</div>
+      <div class="muted" style="margin:3px 0"><b>下一步：</b>${esc(a.next)}</div>
+      <button class="linkbtn" data-name="${esc(a.name)}">查看完整档案 →</button>`;
+    wrap.appendChild(card);
+  });
+  $$('[data-name]',wrap).forEach(b=>b.onclick=()=>openClient(b.dataset.name));
+}
+
+// ---- 客户列表 ----
+let allTags=[],allBanks=[];
+async function loadFilters(){
+  allTags=await api('/api/tags');
+  allBanks=await api('/api/all_banks');
+  const ft=$('#fTag'),fb=$('#fBank');
+  allTags.forEach(t=>ft.add(new Option(t,t)));
+  allBanks.forEach(b=>fb.add(new Option(b,b)));
+}
+
+async function loadClients(){
+  const q=$('#globalSearch').value.trim();
+  const ft=$('#fTag').value,fb=$('#fBank').value,fa=$('#fActive').value;
+  const params=new URLSearchParams();
+  if(q)params.set('q',q);if(ft)params.set('tag',ft);if(fb)params.set('bank',fb);if(fa)params.set('active',fa);
+  const data=await api('/api/clients?'+params);
+  const wrap=$('#cliList');wrap.innerHTML='';
+  if(!data.length){wrap.innerHTML='<div class="empty">没有匹配的客户</div>';return;}
+  data.forEach(c=>{
+    const tags=(c.tag||'').split('、').filter(Boolean).map(t=>`<span class="chip">${esc(t)}</span>`).join('');
+    const banks=(c.all_institutions||[]).slice(0,6).map(b=>`<span class="chip">${esc(b)}</span>`).join('');
+    const more=(c.all_institutions||[]).length>6?`<span class="chip">+${c.all_institutions.length-6}</span>`:'';
+    const today=new Date().toISOString().slice(0,10);
+    const isNew=c.created===today;
+    const card=document.createElement('div');
+    card.className='card tap';
+    card.innerHTML=`
+      <div class="row" style="justify-content:space-between">
+        <h3 style="margin:0">${esc(c.name)}</h3>
+        <div class="row" style="gap:4px">
+          ${isNew?'<span class="badge" style="background:#dbeafe;color:#2563eb">新增</span>':''}
+          ${c.active?'<span class="badge b-active">在做</span>':''}
+        </div>
+      </div>
+      ${tags?`<div style="margin:3px 0">${tags}</div>`:''}
+      <div class="kv">
+        <span><b>开票</b> ${c.income?c.income+'万':'-'}</span>
+        <span><b>纳税</b> ${c.tax?c.tax+'万':'-'}</span>
+        <span><b>企业机构</b> ${c.biz_inst_count||0}</span>
+        <span><b>银行</b> ${c.bank_count||0}</span>
+      </div>
+      ${(banks||more)?`<div style="margin:3px 0">${banks}${more}</div>`:''}`;
+    card.onclick=()=>openClient(c.name);
+    wrap.appendChild(card);
+  });
+}
+
+// ---- 银行列表 ----
+async function loadBanks(){
+  const ft=$('#fTier').value;
+  const data=await api('/api/banks'+(ft?('?tier='+encodeURIComponent(ft)):''));
+  const wrap=$('#bankList');wrap.innerHTML='';
+  if(!data.length){wrap.innerHTML='<div class="empty">没有匹配的银行</div>';return;}
+  const max=Math.max(...data.map(b=>b.count));
+  data.forEach(b=>{
+    const tb=b.tier==='其他'?'b-other':'b-'+b.tier;
+    const tc={'T1':'var(--T1)','T2':'var(--T2)','T3':'var(--T3)','T4':'var(--T4)','其他':'#9ca3af'}[b.tier];
+    const row=document.createElement('div');
+    row.className='bankrow';
+    row.style.cursor='pointer';
+    row.innerHTML=`
+      <span class="badge ${tb}">${b.tier}</span>
+      <span style="min-width:100px;font-weight:600;font-size:14px">${esc(b.name)}</span>
+      <div class="bar"><i style="width:${b.count/max*100}%;background:${tc}"></i></div>
+      <span class="bnum">${b.count}</span>
+      <span class="muted" style="min-width:40px;font-size:12px">${b.rate||''}</span>
+      <span class="chip" style="min-width:24px;text-align:center">${b.product_count}</span>`;
+    row.onclick=()=>openBank(b.name);
+    wrap.appendChild(row);
+  });
+}
+
+// ---- 客户详情 ----
+async function openClient(name){
+  $('#modal').classList.add('show');
+  $('#sheet').innerHTML='<div class="loading" style="padding:40px">加载中…</div>';
+  const c=await api('/api/client/'+encodeURIComponent(name));
+  const p=c.progress;
+  const tags=(c.tag||'').split('、').filter(Boolean).map(t=>`<span class="chip">${esc(t)}</span>`).join('');
+  const banks=(c.all_institutions||[]).map(b=>`<span class="chip">${esc(b)}</span>`).join('')||'<span class="muted">无在贷机构</span>';
+  const insts=c.all_institutions||[];
+  const isGaoxin=(c.tag||'').includes('国高新');
+  $('#sheet').innerHTML=`
+    <div class="sheet-head">
+      <h3>${esc(c.name)}</h3>
+      <button class="linkbtn" onclick="$('#modal').classList.remove('show')">关闭</button>
+    </div>
+    <div class="sheet-body">
+      ${c.active&&p?`<div class="card ${p.overdue?'overdue':''}">
+        <div class="row" style="justify-content:space-between">
+          <b style="color:${p.status==='紧急'?'var(--red)':'var(--ink)'}">${p.status}</b>
+          ${p.overdue?'<span class="flag">已逾期</span>':''}
+        </div>
+        <div class="muted" style="margin:4px 0"><b>进展：</b>${esc(p.progress)}</div>
+        <div class="muted"><b>下一步：</b>${esc(p.next)}</div>
+      </div>`:''}
+      <div class="card">
+        ${tags?`<div style="margin-bottom:6px">${tags}</div>`:''}
+        <div class="kv">
+          <span><b>开票</b> ${c.income?c.income+'万':'待补充'}</span>
+          <span><b>纳税</b> ${c.tax?c.tax+'万':'待补充'}</span>
+          <span><b>企业机构数</b> ${c.biz_inst_count||0}</span>
+          <span><b>银行数</b> ${c.bank_count||0}</span>
+        </div>
+        <div class="muted" style="margin:6px 0"><b>在贷机构：</b></div>
+        <div>${banks}</div>
+      </div>
+      ${insts.length?`<div class="card" style="border-color:#fecaca;background:#fff5f5">
+        <div class="muted" style="font-weight:700;margin-bottom:4px;color:var(--red)">排除清单（存量银行 · 推新银行前先排除）</div>
+        <div>${insts.map(b=>`<span class="chip" style="background:#fee2e2;color:#dc2626">${esc(b)}</span>`).join('')}</div>
+        <div class="muted" style="margin-top:6px;font-size:12px">另需核对：征信查询记录中出现过的银行（可能已被拒）+ 已还清银行（存在管户关系）</div>
+        <button class="btn primary" data-match="${esc(c.name)}" data-age="${c.legal_age||''}" data-income="${c.income||''}" data-tax="${c.tax||''}" data-taxgrade="${c.tax_grade||''}" data-query3m="${c.query_3m||''}" data-query6m="${c.query_6m||''}" data-query12m="${c.query_12m||''}" data-inst="${c.biz_inst_count||''}" data-debt="${c.debt_total||''}" data-cc="${c.cc_usage||''}" data-sale="${c.sale_ratio||''}" data-gaoxin="${(c.is_gaoxin||isGaoxin)?'1':'0'}" data-hastech="${c.has_tech?'1':'0'}" data-overdue="${c.has_overdue?'1':'0'}" data-overduecont="${c.overdue_cont||0}" data-overduecum="${c.overdue_cum||0}" data-exclude="${(c.all_institutions||[]).join('、')}" style="margin-top:8px;width:100%;min-height:42px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-weight:700;cursor:pointer">智能匹配可推银行（全字段自动带入）</button>
+      </div>`:''}
+      <div class="section-title">完整档案</div>
+      <div style="white-space:pre-wrap;font-size:13px;background:#fafafa;border-radius:10px;padding:12px;line-height:1.7">${esc(c.template||'暂无档案文本')}</div>
+      <a href="/api/report/${encodeURIComponent(c.name)}" download style="display:block;margin-top:10px;width:100%;min-height:44px;background:#fff;border:1px solid var(--accent);color:var(--accent);border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;text-align:center;line-height:44px;text-decoration:none">导出诊断报告 DOCX</a>
+    </div>`;
+  $$('[data-match]',$('#sheet')).forEach(b=>b.onclick=()=>{
+    $('#modal').classList.remove('show');
+    show('match');
+    if(b.dataset.age)$('#mAge').value=b.dataset.age;
+    if(b.dataset.income)$('#mIncome').value=b.dataset.income;
+    if(b.dataset.tax)$('#mTax').value=b.dataset.tax;
+    if(b.dataset.taxgrade)$('#mGrade').value=b.dataset.taxgrade;
+    if(b.dataset.query3m)$('#mQ3').value=b.dataset.query3m;
+    if(b.dataset.query6m)$('#mQ6').value=b.dataset.query6m;
+    if(b.dataset.inst)$('#mInst').value=b.dataset.inst;
+    if(b.dataset.debt)$('#mDebt').value=b.dataset.debt;
+    if(b.dataset.cc)$('#mCc').value=b.dataset.cc;
+    if(b.dataset.sale)$('#mSale').value=b.dataset.sale;
+    $('#mGaoxin').checked=b.dataset.gaoxin==='1';
+    $('#mOverdue').checked=b.dataset.overdue==='1';
+    if(b.dataset.overduecont)$('#mOC').value=b.dataset.overduecont;
+    if(b.dataset.overduecum)$('#mOC6').value=b.dataset.overduecum;
+    $('#mExclude').value=b.dataset.exclude||'';
+    $('#btnMatch').click();
+    window.scrollTo(0,0);
+  });
+}
+
+// ---- 银行详情 ----
+async function openBank(name){
+  $('#modal').classList.add('show');
+  $('#sheet').innerHTML='<div class="loading" style="padding:40px">加载中…</div>';
+  const b=await api('/api/bank/'+encodeURIComponent(name));
+  const tb=b.tier==='其他'?'b-other':'b-'+b.tier;
+  let html=`
+    <div class="sheet-head">
+      <h3>${esc(b.name)}</h3>
+      <button class="linkbtn" onclick="$('#modal').classList.remove('show')">关闭</button>
+    </div>
+    <div class="sheet-body">
+      <div class="card">
+        <div class="row" style="gap:8px;margin-bottom:6px">
+          <span class="badge ${tb}">${b.tier}</span>
+          ${b.rate?`<span class="muted">获贷率 <b style="color:var(--ink)">${b.rate}</b></span>`:''}
+          <span class="muted">客户数 <b style="color:var(--ink)">${b.count}</b></span>
+          <span class="muted">产品数 <b style="color:var(--ink)">${b.product_count}</b></span>
+        </div>
+      </div>`;
+  if(b.products&&b.products.length){
+    html+='<div class="section-title">贷款产品（'+b.products.length+'款）</div>';
+    b.products.forEach(p=>{
+      html+=`<div class="product">
+        <div style="margin-bottom:4px"><b>${esc(p.product)}</b> <span class="muted">(${esc(p.type)})</span></div>
+        <div class="kv">
+          ${p.amount_max?`<span><b>额度上限</b> ${esc(p.amount_max)}万</span>`:''}
+          ${p.rate_min||p.rate_max?`<span><b>利率</b> ${esc(p.rate_min||'')}~${esc(p.rate_max||'')}</span>`:''}
+          ${p.min_age||p.max_age?`<span><b>年龄</b> ${p.min_age||''}-${p.max_age||''}</span>`:''}
+          ${p.query_3m_max?`<span><b>近3月查询≤</b> ${p.query_3m_max}</span>`:''}
+          ${p.query_6m_max?`<span><b>近6月查询≤</b> ${p.query_6m_max}</span>`:''}
+          ${p.inst_max?`<span><b>机构数≤</b> ${p.inst_max}</span>`:''}
+          ${p.debt_max?`<span><b>负债≤</b> ${p.debt_max}万</span>`:''}
+          ${p.min_tax?`<span><b>纳税≥</b> ${p.min_tax}万</span>`:''}
+          ${p.tax_grades?`<span><b>纳税级别</b> ${esc(p.tax_grades)}</span>`:''}
+          ${p.min_shareholding?`<span><b>持股≥</b> ${p.min_shareholding}%</span>`:''}
+          ${p.dual_sign_required?`<span class="chip">需双签</span>`:''}
+          ${p.tech_required?`<span class="chip">需科技标签</span>`:''}
+        </div>
+        ${p.overdue_rule?`<div class="muted" style="margin:4px 0"><b>逾期规则：</b>${esc(p.overdue_rule)}</div>`:''}
+      </div>`;
+    });
+  }
+  html+='</div>';
+  $('#sheet').innerHTML=html;
+}
+
+// ---- 智能匹配 ----
+$('#btnMatch').onclick=async()=>{
+  const body={
+    age:parseInt($('#mAge').value)||undefined,
+    income:parseFloat($('#mIncome').value)||undefined,
+    tax:parseFloat($('#mTax').value)||undefined,
+    tax_grade:$('#mGrade').value||undefined,
+    query_3m:parseInt($('#mQ3').value)||undefined,
+    query_6m:parseInt($('#mQ6').value)||undefined,
+    inst_count:parseInt($('#mInst').value)||undefined,
+    debt_total:parseFloat($('#mDebt').value)||undefined,
+    cc_usage:parseFloat($('#mCc').value)||undefined,
+    sale_ratio:parseFloat($('#mSale').value)||undefined,
+    is_gaoxin:$('#mGaoxin').checked,
+    overdue:$('#mOverdue').checked,
+    overdue_cont:parseInt($('#mOC').value)||undefined,
+    overdue_cum:parseInt($('#mOC6').value)||undefined,
+    exclude_banks:($('#mExclude').value||'').split(/[,，]/).map(s=>s.trim()).filter(Boolean),
+  };
+  $('#matchResults').innerHTML='<div class="loading" style="padding:30px">匹配中…</div>';
+  const res=await fetch('/api/match',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}).then(r=>r.json());
+  const wrap=$('#matchResults');wrap.innerHTML='';
+  // 风控预检区
+  if(res.risk_fatal&&res.risk_fatal.length){
+    const fatal=document.createElement('div');fatal.className='card';
+    fatal.style.borderColor='#dc2626';fatal.style.background='#fff5f5';
+    fatal.innerHTML=`<div style="font-weight:800;color:var(--red);margin-bottom:6px">致命红线 · 一票否决</div>${res.risk_fatal.map(f=>`<div style="color:var(--red);font-size:14px;margin:2px 0">▸ ${esc(f)}</div>`).join('')}<div class="muted" style="margin-top:6px;font-size:12px">命中致命红线，暂不可新增任何银行信用贷，建议先处理逾期或走抵押/担保路径</div>`;
+    wrap.appendChild(fatal);
+    return;
+  }
+  if(res.risk_warn&&res.risk_warn.length){
+    const warn=document.createElement('div');warn.className='card';
+    warn.style.borderColor='#fde68a';warn.style.background='#fffbeb';
+    warn.innerHTML=`<div style="font-weight:800;color:#92400e;margin-bottom:6px">高风险项 · 需注意</div>${res.risk_warn.map(w=>`<div style="color:#92400e;font-size:14px;margin:2px 0">▸ ${esc(w)}</div>`).join('')}`;
+    wrap.appendChild(warn);
+  }
+  if(!res.recommendations.length){wrap.innerHTML+='<div class="card"><div class="empty">无匹配银行，请放宽条件</div></div>';return;}
+  // summary
+  const sum=document.createElement('div');sum.className='card';
+  sum.innerHTML=`<div class="row" style="justify-content:space-between"><b>匹配到 ${res.total_match} 家银行</b><span class="muted">Top ${res.recommendations.length} 推荐</span></div>`;
+  wrap.appendChild(sum);
+  // recommendations
+  res.recommendations.forEach((r,i)=>{
+    const tb=r.tier==='其他'?'b-other':'b-'+r.tier;
+    const card=document.createElement('div');card.className='card';
+    const medal=['#dc2626','#ea580c','#ca8a04','#6b7280','#6b7280'][i];
+    card.innerHTML=`
+      <div class="row" style="justify-content:space-between">
+        <h3 style="margin:0"><span style="color:${medal};font-size:20px">${i+1}</span> ${esc(r.bank)}</h3>
+        <span class="badge ${tb}">${r.tier}</span>
+      </div>
+      <div class="kv">
+        <span><b>匹配分</b> ${r.score}</span>
+        ${r.rate?`<span><b>获贷率</b> ${r.rate}</span>`:''}
+        <span><b>可做产品</b> ${r.product_count}款</span>
+      </div>
+      ${r.match_reasons.length?`<div style="margin:6px 0"><div class="muted" style="font-weight:700;margin-bottom:2px">匹配理由：</div>${r.match_reasons.map(m=>`<span class="chip" style="background:#dcfce7;color:#16a34a">${esc(m)}</span>`).join('')}</div>`:''}
+      ${r.exclude_reasons.length?`<div style="margin:4px 0"><div class="muted" style="font-weight:700;margin-bottom:2px">注意项：</div>${r.exclude_reasons.map(e=>`<span class="chip" style="background:#fee2e2;color:#dc2626">${esc(e)}</span>`).join('')}</div>`:''}`;
+    card.onclick=()=>openBank(r.bank);
+    card.style.cursor='pointer';
+    wrap.appendChild(card);
+  });
+};
+
+// ---- 新增客户（工作台内手动入库） ----
+$('#btnAddClient').onclick=()=>{
+  ['acName','acTag','acIncome','acTax','acInst','acBank','acInstitutions','acTemplate',
+   'acEstablishedYear','acShareholding','acLegalName','acAge','acTaxGrade',
+   'acDebtTotal','acCcUsage','acQuery3m','acQuery6m','acQuery12m','acSaleRatio',
+   'acOverdueCont','acOverdueCum'].forEach(id=>$('#'+id).value='');
+  $('#acDualSign').value='';$('#acOverdue').checked=false;$('#acActive').checked=false;
+  $('#addModal').classList.add('show');
+};
+$('#addModal').onclick=e=>{if(e.target===$('#addModal'))$('#addModal').classList.remove('show')};
+
+// 从结构化字段自动生成模板文本
+$('#acGenTemplate').onclick=()=>{
+  const v=id=>$('#'+id).value.trim();
+  const name=v('acName'),tag=v('acTag'),today=new Date().toISOString().slice(0,10);
+  const dualSignText=v('acDualSign')==='true'?'已婚双签':(v('acDualSign')==='false'?'已婚':'婚姻待补充');
+  const taxGradeText=v('acTaxGrade')?`，纳税${v('acTaxGrade')}级`:'';
+  const overdueText=$('#acOverdue').checked?`连${v('acOverdueCont')||0}累${v('acOverdueCum')||0}`:'无';
+  const insts=v('acInstitutions');
+  $('#acTemplate').value=`客户档案：${name}（创建日期：${today}）
+
+公司架构：${name}，${v('acEstablishedYear')||'XXXX'}年成立${v('acShareholding')?`，法人持股${v('acShareholding')}%`:''}，主营待补充，注册地址待补充
+
+企业标签：${tag||'无'}
+
+客户画像：${v('acLegalName')||'待补充'}，${v('acAge')?v('acAge')+'岁':'年龄待补充'}，${dualSignText}
+
+资产：待确认
+
+经营数据：①2024年：待补充；②2025年：待补充；③2026年1-6月：应税销售额${v('acIncome')?v('acIncome')+'万':'待补充'}，纳税${v('acTax')?v('acTax')+'万':'待补充'}${taxGradeText}
+
+企业负债：${v('acDebtTotal')?`借贷余额共计${v('acDebtTotal')}万`:''}
+
+个人负债：${v('acCcUsage')?`信用卡使用率${v('acCcUsage')}%`:''}
+
+企业担保：待补充
+
+机构数：企业端${v('acInst')||0}家，个人端待确认
+
+法诉：待补充
+
+征信逾期：${overdueText}
+征信查询：${v('acQuery3m')?`近3月查询${v('acQuery3m')}次；`:''}${v('acQuery6m')?`近6个月查询${v('acQuery6m')}次；`:''}${v('acQuery12m')?`近12个月查询${v('acQuery12m')}次`:''}
+${v('acCcUsage')?`信用卡使用率${v('acCcUsage')}%`:''}
+
+落实建议：
+策略方向：待补充
+推荐排序：待补充
+关键动作：待补充
+风险提示：待补充`;
+  toast('模板已生成，可手动编辑补充');
+};
+
+$('#acSubmit').onclick=async()=>{
+  const name=$('#acName').value.trim();
+  const template=$('#acTemplate').value.trim();
+  if(!name||!template){toast('客户名称和模板为必填');return;}
+  const tagVal=$('#acTag').value.trim();
+  const body={
+    name, template, tag:tagVal,
+    income:parseFloat($('#acIncome').value)||0,
+    tax:parseFloat($('#acTax').value)||0,
+    biz_inst_count:parseInt($('#acInst').value)||0,
+    bank_count:parseInt($('#acBank').value)||0,
+    all_institutions:($('#acInstitutions').value||'').split(/[,，]/).map(s=>s.trim()).filter(Boolean),
+    legal_age:parseInt($('#acAge').value)||null,
+    established_year:parseInt($('#acEstablishedYear').value)||null,
+    shareholding_pct:parseFloat($('#acShareholding').value)||null,
+    tax_grade:$('#acTaxGrade').value||'',
+    debt_total:parseFloat($('#acDebtTotal').value)||null,
+    cc_usage:parseFloat($('#acCcUsage').value)||null,
+    query_3m:parseInt($('#acQuery3m').value)||null,
+    query_6m:parseInt($('#acQuery6m').value)||null,
+    query_12m:parseInt($('#acQuery12m').value)||null,
+    sale_ratio:parseFloat($('#acSaleRatio').value)||null,
+    has_overdue:$('#acOverdue').checked,
+    overdue_cont:parseInt($('#acOverdueCont').value)||0,
+    overdue_cum:parseInt($('#acOverdueCum').value)||0,
+    is_dual_sign:$('#acDualSign').value==='true',
+    is_gaoxin:tagVal.includes('国高新'),
+    has_tech:['国高新','省专精特新','专精特新','科技型','创新型'].some(t=>tagVal.includes(t)),
+    status:$('#acActive').checked?'在做':'历史',
+    active:$('#acActive').checked,
+  };
+  $('#acSubmit').textContent='保存中…';
+  const res=await fetch('/api/client/add',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}).then(r=>r.json());
+  $('#acSubmit').textContent='保存到工作台';
+  if(res.error){toast(res.error);return;}
+  $('#addModal').classList.remove('show');
+  toast((res.action==='added'?'已新增':'已更新')+'，工作台已同步');
+  loadStats();loadClients();loadFilters();
+};
+
+// ---- 事件 ----
+$('#globalSearch').oninput=()=>{show('clients');loadClients();};
+$('#fTag').onchange=loadClients;$('#fBank').onchange=loadClients;$('#fActive').onchange=loadClients;
+$('#fTier').onchange=loadBanks;
+$('#modal').onclick=e=>{if(e.target===$('#modal'))$('#modal').classList.remove('show')};
+
+// ---- 管理端：规则/银行政策编辑（改了即同步）----
+let adminRules=null,adminBanksList=[];
+const TIERS=['T1','T2','T3','T4','其他'];
+
+async function loadAdmin(){
+  adminRules=await api('/api/rules');
+  adminBanksList=await api('/api/banks');
+  renderTiers();renderRates();renderRedline();
+  // 产品编辑银行下拉
+  const sel=$('#prodBankSel');sel.innerHTML='';
+  adminBanksList.forEach(b=>sel.add(new Option(b.name,b.name)));
+  sel.onchange=()=>loadProdForm(sel.value);
+  if(adminBanksList.length)loadProdForm(adminBanksList[0].name);
+  // 在做进展下拉
+  const an=$('#actNameSel');an.innerHTML='';
+  const actData=await api('/api/active');
+  actData.items.forEach(a=>an.add(new Option(a.name,a.name)));
+  if(actData.items.length){an.value=actData.items[0].name;loadActForm(actData.items[0].name);}
+  an.onchange=()=>loadActForm(an.value);
+}
+
+function renderTiers(){
+  const tiers=adminRules.tiers||{};
+  const allBankNames=adminBanksList.map(b=>b.name);
+  let html='<div style="display:grid;gap:4px">';
+  allBankNames.forEach(name=>{
+    const cur=tiers[name]||'其他';
+    html+=`<div class="row" style="gap:6px;padding:4px 0">
+      <span style="min-width:110px;font-size:13px">${esc(name)}</span>
+      <select data-tier="${esc(name)}" style="min-height:32px;border:1px solid var(--line);border-radius:8px;padding:0 6px;font-size:13px;font-family:inherit">
+        ${TIERS.map(t=>`<option ${t===cur?'selected':''}>${t}</option>`).join('')}
+      </select>
+    </div>`;
+  });
+  html+='</div>';
+  $('#tierList').innerHTML=html;
+}
+
+function renderRates(){
+  const rates=adminRules.rates||{};
+  const allBankNames=adminBanksList.map(b=>b.name);
+  let html='<div style="display:grid;gap:4px">';
+  allBankNames.forEach(name=>{
+    const cur=rates[name]||'';
+    html+=`<div class="row" style="gap:6px;padding:4px 0">
+      <span style="min-width:110px;font-size:13px">${esc(name)}</span>
+      <input data-rate="${esc(name)}" value="${esc(cur)}" placeholder="如 39.5%" style="min-height:32px;border:1px solid var(--line);border-radius:8px;padding:0 8px;font-size:13px;font-family:inherit;width:100px">
+    </div>`;
+  });
+  html+='</div>';
+  $('#rateList').innerHTML=html;
+}
+
+function renderRedline(){
+  const red=adminRules.redline||[];
+  const allBankNames=adminBanksList.map(b=>b.name);
+  let html='<div style="display:grid;gap:4px">';
+  allBankNames.forEach(name=>{
+    const checked=red.includes(name);
+    html+=`<label style="display:flex;align-items:center;gap:6px;padding:4px 0;font-size:13px;cursor:pointer">
+      <input type="checkbox" data-red="${esc(name)}" ${checked?'checked':''} style="width:18px;height:18px"> ${esc(name)}
+    </label>`;
+  });
+  html+='</div><div class="muted" style="margin-top:6px;font-size:12px">勾选=红线禁推。杭州银行/南京银行已默认取消红线可正常推荐</div>';
+  $('#redList').innerHTML=html;
+}
+
+$('#btnSaveRules').onclick=async()=>{
+  const tiers={},rates={},red=[];
+  $$('[data-tier]').forEach(s=>tiers[s.dataset.tier]=s.value);
+  $$('[data-rate]').forEach(s=>{if(s.value.trim())rates[s.dataset.rate]=s.value.trim();});
+  $$('[data-red]').forEach(c=>{if(c.checked)red.push(c.dataset.red);});
+  $('#btnSaveRules').textContent='保存中…';
+  const res=await fetch('/api/rules/update',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({tiers,rates,redline:red})}).then(r=>r.json());
+  $('#btnSaveRules').textContent='保存规则（写盘同步）';
+  if(res.ok){toast('规则已保存并同步');loadStats();loadBanks();}else{toast('保存失败');}
+};
+
+// 产品政策表单
+function loadProdForm(bankName){
+  const bank=adminBanksList.find(b=>b.name===bankName);
+  const products=(bank&&bank.products)||[];
+  // 现有产品列表
+  let html='';
+  if(products.length){
+    products.forEach(p=>{
+      html+=`<div class="product">
+        <div style="margin-bottom:4px"><b>${esc(p.product)}</b> <span class="muted">(${esc(p.type||'')})</span></div>
+        <div class="kv">
+          ${p.amount_max?`<span><b>额度</b>${esc(p.amount_max)}万</span>`:''}
+          ${p.rate?`<span><b>利率</b>${esc(p.rate)}</span>`:''}
+          ${p.min_tax?`<span><b>纳税≥</b>${p.min_tax}万</span>`:''}
+          ${p.query_6m_max?`<span><b>6月查询≤</b>${p.query_6m_max}</span>`:''}
+          ${p.inst_max?`<span><b>机构≤</b>${p.inst_max}</span>`:''}
+        </div>
+        <button class="linkbtn" data-edit-prod="${esc(p.bank)}|||${esc(p.product)}" style="font-size:13px;padding:2px 6px">编辑此产品</button>
+      </div>`;
+    });
+  }else{html='<div class="muted" style="font-size:13px;padding:8px 0">该银行暂无产品，可在下方新增</div>';}
+  $('#prodExisting').innerHTML=html;
+  $$('[data-edit-prod]',$('#prodExisting')).forEach(b=>b.onclick=()=>{
+    const [bk,pd]=b.dataset.editProd.split('|||');
+    fillProdForm(bk,pd);
+  });
+  // 新增表单
+  renderProdForm(bankName,'','');
+}
+
+function fillProdForm(bankName,prodName){
+  const bank=adminBanksList.find(b=>b.name===bankName);
+  const p=(bank&&bank.products||[]).find(x=>x.product===prodName);
+  if(!p)return;
+  renderProdForm(bankName,prodName,p);
+}
+
+function renderProdForm(bankName,prodName,p){
+  p=p||{};
+  $('#prodForm').innerHTML=`
+    <div class="section-title">${prodName?'编辑产品':'新增产品'} · ${esc(bankName)}</div>
+    <div><label class="muted">产品名称 *</label><input id="pfName" value="${esc(p.product||'')}" style="width:100%;min-height:38px;border:1px solid var(--line);border-radius:10px;padding:0 10px;font-size:14px;font-family:inherit"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+      <div><label class="muted">产品类型</label><input id="pfType" value="${esc(p.type||'')}" placeholder="纯信用/抵押/担保" style="width:100%;min-height:38px;border:1px solid var(--line);border-radius:10px;padding:0 8px;font-size:14px;font-family:inherit"></div>
+      <div><label class="muted">额度上限(万)</label><input type="number" id="pfAmount" value="${p.amount_max||''}" style="width:100%;min-height:38px;border:1px solid var(--line);border-radius:10px;padding:0 8px;font-size:14px;font-family:inherit"></div>
+    </div>
+    <div><label class="muted">利率（文字描述）</label><input id="pfRate" value="${esc(p.rate||'')}" placeholder="如 4.05%" style="width:100%;min-height:38px;border:1px solid var(--line);border-radius:10px;padding:0 10px;font-size:14px;font-family:inherit"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px">
+      <div><label class="muted">年龄下</label><input type="number" id="pfMinAge" value="${p.min_age||''}" style="width:100%;min-height:38px;border:1px solid var(--line);border-radius:10px;padding:0 6px;font-size:14px;font-family:inherit"></div>
+      <div><label class="muted">年龄上</label><input type="number" id="pfMaxAge" value="${p.max_age||''}" style="width:100%;min-height:38px;border:1px solid var(--line);border-radius:10px;padding:0 6px;font-size:14px;font-family:inherit"></div>
+      <div><label class="muted">纳税≥(元)</label><input type="number" id="pfMinTax" value="${p.min_tax||''}" style="width:100%;min-height:38px;border:1px solid var(--line);border-radius:10px;padding:0 6px;font-size:14px;font-family:inherit"></div>
+      <div><label class="muted">纳税级别</label><input id="pfGrades" value="${esc((p.tax_grades||[]).join(','))}" placeholder="A,B,M" style="width:100%;min-height:38px;border:1px solid var(--line);border-radius:10px;padding:0 6px;font-size:14px;font-family:inherit"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+      <div><label class="muted">近3月查询≤</label><input type="number" id="pfQ3" value="${p.query_3m_max||''}" style="width:100%;min-height:38px;border:1px solid var(--line);border-radius:10px;padding:0 6px;font-size:14px;font-family:inherit"></div>
+      <div><label class="muted">近6月查询≤</label><input type="number" id="pfQ6" value="${p.query_6m_max||''}" style="width:100%;min-height:38px;border:1px solid var(--line);border-radius:10px;padding:0 6px;font-size:14px;font-family:inherit"></div>
+      <div><label class="muted">机构数≤</label><input type="number" id="pfInst" value="${p.inst_max||''}" style="width:100%;min-height:38px;border:1px solid var(--line);border-radius:10px;padding:0 6px;font-size:14px;font-family:inherit"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+      <div><label class="muted">负债≤(万)</label><input type="number" id="pfDebt" value="${p.debt_max||''}" style="width:100%;min-height:38px;border:1px solid var(--line);border-radius:10px;padding:0 6px;font-size:14px;font-family:inherit"></div>
+      <div><label class="muted">持股≥%</label><input type="number" id="pfShare" value="${p.min_shareholding||''}" style="width:100%;min-height:38px;border:1px solid var(--line);border-radius:10px;padding:0 6px;font-size:14px;font-family:inherit"></div>
+    </div>
+    <div><label class="muted">逾期规则（文字）</label><input id="pfOverdue" value="${esc(p.overdue_rule||'')}" style="width:100%;min-height:38px;border:1px solid var(--line);border-radius:10px;padding:0 10px;font-size:14px;font-family:inherit"></div>
+    <button id="btnSaveProd" style="width:100%;min-height:44px;background:var(--accent);color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer">${prodName?'更新产品':'新增产品'}（写盘同步）</button>`;
+  $('#btnSaveProd').onclick=async()=>{
+    const name=$('#pfName').value.trim();
+    if(!name){toast('产品名称必填');return;}
+    const body={bank:bankName,product:name,type:$('#pfType').value,
+      amount_max:parseFloat($('#pfAmount').value)||undefined,
+      rate:$('#pfRate').value,min_age:parseInt($('#pfMinAge').value)||undefined,
+      max_age:parseInt($('#pfMaxAge').value)||undefined,
+      min_tax:parseFloat($('#pfMinTax').value)||undefined,
+      tax_grades:$('#pfGrades').value.split(',').map(s=>s.trim()).filter(Boolean),
+      query_3m_max:parseInt($('#pfQ3').value)||undefined,
+      query_6m_max:parseInt($('#pfQ6').value)||undefined,
+      inst_max:parseInt($('#pfInst').value)||undefined,
+      debt_max:parseFloat($('#pfDebt').value)||undefined,
+      min_shareholding:parseFloat($('#pfShare').value)||undefined,
+      overdue_rule:$('#pfOverdue').value};
+    $('#btnSaveProd').textContent='保存中…';
+    const res=await fetch('/api/bank/add',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}).then(r=>r.json());
+    $('#btnSaveProd').textContent=prodName?'更新产品':'新增产品';
+    if(res.error){toast(res.error);return;}
+    toast((res.action==='added'?'已新增':'已更新')+'，工作台已同步');
+    await loadStats();adminBanksList=await api('/api/banks');loadProdForm(bankName);
+  };
+}
+
+// 在做进展表单
+async function loadActForm(name){
+  const all=await api('/api/active');
+  const a=all.items.find(x=>x.name===name);
+  if(!a)return;
+  $('#actStatus').value=a.status||'待反馈';
+  $('#actDeadline').value=a.deadline||'';
+  $('#actOverdue').value=a.overdue?'1':'0';
+  $('#actProgress').value=a.progress||'';
+  $('#actNext').value=a.next||'';
+}
+$('#btnSaveActive').onclick=async()=>{
+  const name=$('#actNameSel').value;
+  if(!name){toast('请选择客户');return;}
+  const body={name,status:$('#actStatus').value,deadline:$('#actDeadline').value||null,
+    overdue:$('#actOverdue').value==='1',progress:$('#actProgress').value,next:$('#actNext').value};
+  $('#btnSaveActive').textContent='保存中…';
+  const res=await fetch('/api/active/update',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}).then(r=>r.json());
+  $('#btnSaveActive').textContent='保存进展（写盘同步）';
+  if(res.ok){toast('进展已保存并同步');loadStats();loadToday();}else{toast('保存失败');}
+};
+
+// 管理端子Tab切换
+$$('.adm-tab').forEach(t=>t.onclick=()=>{
+  $$('.adm-tab').forEach(x=>x.classList.remove('active'));
+  t.classList.add('active');
+  const at=t.dataset.at;
+  $('#admTier').style.display=at==='tier'?'':'none';
+  $('#admProduct').style.display=at==='product'?'':'none';
+  $('#admActive').style.display=at==='active'?'':'none';
+});
+
+// ---- 启动 ----
+loadStats();loadToday();loadFilters();loadClients();loadBanks();
+</script>
+</body>
+</html>
