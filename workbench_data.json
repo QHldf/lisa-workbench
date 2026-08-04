@@ -1,0 +1,3242 @@
+{
+  "total_clients": 100,
+  "clients": [
+    {
+      "name": "laojianshan",
+      "tag": "科技型中小企业（认证申请中）",
+      "tags": [
+        "科技型中小企业（认证申请中）"
+      ],
+      "has_tech": true,
+      "income": 0,
+      "tax": 0,
+      "biz_inst_count": 0,
+      "bank_count": 5,
+      "all_institutions": [
+        "中国银行",
+        "中信银行",
+        "杭州联合农商行",
+        "南银法巴消费金融",
+        "温州银行",
+        "工商银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 0,
+      "status": ""
+    },
+    {
+      "name": "严国强",
+      "tag": "凯亚姆——省科小、国科小、国高新",
+      "tags": [
+        "凯亚姆——省科小",
+        "国科小",
+        "国高新"
+      ],
+      "has_tech": true,
+      "income": 7700.0,
+      "tax": 330.0,
+      "biz_inst_count": 6,
+      "bank_count": 6,
+      "all_institutions": [
+        "余杭农商行",
+        "泰隆银行",
+        "工商银行",
+        "中国银行",
+        "建设银行",
+        "农业银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 6,
+      "status": ""
+    },
+    {
+      "name": "云南中晟新材料有限责任公司",
+      "tag": "国高新、省专精特新、省创新型中小企业、省级智能工厂",
+      "tags": [
+        "国高新",
+        "省专精特新",
+        "省创新型中小企业",
+        "省级智能工厂"
+      ],
+      "has_tech": true,
+      "income": 68600.0,
+      "tax": 0,
+      "biz_inst_count": 0,
+      "bank_count": 0,
+      "all_institutions": [],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 0,
+      "status": ""
+    },
+    {
+      "name": "全拓科技（杭州）股份有限公司",
+      "tag": "国高新、专精特新、科技型中小企业、创新型中小企业",
+      "tags": [
+        "国高新",
+        "专精特新",
+        "科技型中小企业",
+        "创新型中小企业"
+      ],
+      "has_tech": true,
+      "income": 12673.0,
+      "tax": 0,
+      "biz_inst_count": 11,
+      "bank_count": 11,
+      "all_institutions": [
+        "江苏银行",
+        "杭州联合农商行",
+        "农业银行",
+        "萧山农商行",
+        "兴业银行",
+        "北京银行",
+        "中国银行",
+        "渤海银行萧山支行",
+        "交通银行",
+        "上海银行",
+        "平安银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 11,
+      "status": ""
+    },
+    {
+      "name": "周建中",
+      "tag": "国高新、国科小、省创新型中小企业",
+      "tags": [
+        "国高新",
+        "国科小",
+        "省创新型中小企业"
+      ],
+      "has_tech": true,
+      "income": 6700.0,
+      "tax": 0,
+      "biz_inst_count": 7,
+      "bank_count": 7,
+      "all_institutions": [
+        "杭州联合农商行",
+        "中国银行",
+        "建设银行",
+        "广发银行",
+        "交通银行",
+        "南京银行",
+        "江苏银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 7,
+      "status": ""
+    },
+    {
+      "name": "徐炜超",
+      "tag": "国高新、科技型中小企业",
+      "tags": [
+        "国高新",
+        "科技型中小企业"
+      ],
+      "has_tech": true,
+      "income": 1800.0,
+      "tax": 0,
+      "biz_inst_count": 6,
+      "bank_count": 6,
+      "all_institutions": [
+        "杭州联合农商行",
+        "中国银行",
+        "余杭农商行",
+        "江苏银行",
+        "四川新网银行",
+        "金城银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 6,
+      "status": ""
+    },
+    {
+      "name": "朗晟橡塑（杭州）有限公司",
+      "tag": "国高新、科技型中小企业、创新型中小企业",
+      "tags": [
+        "国高新",
+        "科技型中小企业",
+        "创新型中小企业"
+      ],
+      "has_tech": true,
+      "income": 8000.0,
+      "tax": 185.0,
+      "biz_inst_count": 9,
+      "bank_count": 8,
+      "all_institutions": [
+        "杭州联合农商行",
+        "邮储银行",
+        "永赢金融租赁",
+        "交通银行",
+        "江苏银行",
+        "泰隆银行",
+        "北京银行",
+        "徐州农商",
+        "农信"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 9,
+      "status": ""
+    },
+    {
+      "name": "李海峰",
+      "tag": "无科技标签",
+      "tags": [
+        "无科技标签"
+      ],
+      "has_tech": true,
+      "income": 9000.0,
+      "tax": 150.0,
+      "biz_inst_count": 3,
+      "bank_count": 3,
+      "all_institutions": [
+        "中国银行",
+        "金华银行",
+        "宁波银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 3,
+      "status": ""
+    },
+    {
+      "name": "杭州丰链未来网络科技有限公司",
+      "tag": "",
+      "tags": [],
+      "has_tech": false,
+      "income": 922.0,
+      "tax": 22.0,
+      "biz_inst_count": 1,
+      "bank_count": 4,
+      "all_institutions": [
+        "中国银行",
+        "兴业消费金融",
+        "网商银行",
+        "交通银行",
+        "光大银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 1,
+      "status": ""
+    },
+    {
+      "name": "杭州久醇品牌管理",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 6388.86,
+      "tax": 3.73,
+      "biz_inst_count": 1,
+      "bank_count": 4,
+      "all_institutions": [
+        "民泰银行",
+        "建设银行",
+        "工商银行",
+        "招商银行",
+        "蚂蚁消费金融"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 1,
+      "status": ""
+    },
+    {
+      "name": "杭州介子网络有限公司",
+      "tag": "科技型中小企业",
+      "tags": [
+        "科技型中小企业"
+      ],
+      "has_tech": true,
+      "income": 406.0,
+      "tax": 4.9,
+      "biz_inst_count": 6,
+      "bank_count": 7,
+      "all_institutions": [
+        "工商银行",
+        "宁波银行",
+        "余杭农商行",
+        "网商银行",
+        "民泰银行",
+        "光大银行",
+        "微众银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 6,
+      "status": ""
+    },
+    {
+      "name": "杭州仔晨服饰有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 804.4,
+      "tax": 0.2929,
+      "biz_inst_count": 0,
+      "bank_count": 8,
+      "all_institutions": [
+        "萧山农商行",
+        "农业银行",
+        "中国银行",
+        "杭州联合农商行",
+        "南银法巴消费金融",
+        "江苏银行",
+        "工商银行",
+        "中信银行",
+        "建设银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 0,
+      "status": ""
+    },
+    {
+      "name": "杭州众航达电力建设有限公司",
+      "tag": "科技型中小企业",
+      "tags": [
+        "科技型中小企业"
+      ],
+      "has_tech": true,
+      "income": 8691.0,
+      "tax": 0.01,
+      "biz_inst_count": 2,
+      "bank_count": 2,
+      "all_institutions": [
+        "中国银行",
+        "瑞丰农商"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 2,
+      "status": ""
+    },
+    {
+      "name": "杭州佐尔兴动力设备有限公司",
+      "tag": "国高新、创新型中小企业、科技型中小企业",
+      "tags": [
+        "国高新",
+        "创新型中小企业",
+        "科技型中小企业"
+      ],
+      "has_tech": true,
+      "income": 4500.0,
+      "tax": 200.0,
+      "biz_inst_count": 3,
+      "bank_count": 8,
+      "all_institutions": [
+        "微众银行",
+        "民泰银行",
+        "度小满金融",
+        "兴业消费金融",
+        "光大银行",
+        "亿联银行",
+        "小雨点",
+        "中关村银行",
+        "四川新网银行",
+        "北京消金",
+        "江苏银行",
+        "蚂蚁消费金融",
+        "萧山农商行",
+        "五矿信托",
+        "京东金融"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 3,
+      "status": ""
+    },
+    {
+      "name": "杭州共向人力资源有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 4178.79,
+      "tax": 5.82,
+      "biz_inst_count": 0,
+      "bank_count": 0,
+      "all_institutions": [],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 0,
+      "status": ""
+    },
+    {
+      "name": "杭州冰瓶科技有限公司",
+      "tag": "省科小/科技型中小企业",
+      "tags": [
+        "省科小/科技型中小企业"
+      ],
+      "has_tech": true,
+      "income": 3900.0,
+      "tax": 12.8,
+      "biz_inst_count": 3,
+      "bank_count": 3,
+      "all_institutions": [
+        "建设银行",
+        "工商银行",
+        "浙商银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 3,
+      "status": ""
+    },
+    {
+      "name": "杭州凯鲜龙农产品销售服务有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 451.0,
+      "tax": 0.99,
+      "biz_inst_count": 0,
+      "bank_count": 0,
+      "all_institutions": [],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 0,
+      "status": ""
+    },
+    {
+      "name": "杭州南河新能源科技有限公司",
+      "tag": "科技型中小企业",
+      "tags": [
+        "科技型中小企业"
+      ],
+      "has_tech": true,
+      "income": 529.0,
+      "tax": 0.55,
+      "biz_inst_count": 2,
+      "bank_count": 2,
+      "all_institutions": [
+        "临安农商行",
+        "泰隆银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 2,
+      "status": ""
+    },
+    {
+      "name": "杭州友业汽配有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 50.0,
+      "tax": 0,
+      "biz_inst_count": 2,
+      "bank_count": 2,
+      "all_institutions": [
+        "民生银行",
+        "微众银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 2,
+      "status": ""
+    },
+    {
+      "name": "杭州古奈特酒店管理有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 30.0,
+      "tax": 0,
+      "biz_inst_count": 3,
+      "bank_count": 3,
+      "all_institutions": [
+        "泰隆银行",
+        "江苏银行",
+        "兴业银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 3,
+      "status": ""
+    },
+    {
+      "name": "杭州名恒医学检验实验室有限公司",
+      "tag": "国高新、科技型中小企业",
+      "tags": [
+        "国高新",
+        "科技型中小企业"
+      ],
+      "has_tech": true,
+      "income": 1000.0,
+      "tax": 0,
+      "biz_inst_count": 7,
+      "bank_count": 7,
+      "all_institutions": [
+        "中国银行",
+        "南京银行",
+        "微众银行",
+        "萧山农商行",
+        "工商银行",
+        "中信银行",
+        "网商银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 7,
+      "status": ""
+    },
+    {
+      "name": "杭州后朴科技",
+      "tag": "科技型中小企业",
+      "tags": [
+        "科技型中小企业"
+      ],
+      "has_tech": true,
+      "income": 23.0,
+      "tax": 0,
+      "biz_inst_count": 0,
+      "bank_count": 0,
+      "all_institutions": [],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 0,
+      "status": ""
+    },
+    {
+      "name": "杭州启鑫玩具有限公司",
+      "tag": "科技型中小企业",
+      "tags": [
+        "科技型中小企业"
+      ],
+      "has_tech": true,
+      "income": 500.0,
+      "tax": 0,
+      "biz_inst_count": 1,
+      "bank_count": 1,
+      "all_institutions": [
+        "江苏银行",
+        "兴业消费金融"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 1,
+      "status": ""
+    },
+    {
+      "name": "杭州启鑫玩具有限公司_周良波",
+      "tag": "科技型中小企业",
+      "tags": [
+        "科技型中小企业"
+      ],
+      "has_tech": true,
+      "income": 500.0,
+      "tax": 0,
+      "biz_inst_count": 3,
+      "bank_count": 2,
+      "all_institutions": [
+        "江苏银行",
+        "兴业消费金融",
+        "工商银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 3,
+      "status": ""
+    },
+    {
+      "name": "杭州因可塑业有限公司",
+      "tag": "",
+      "tags": [],
+      "has_tech": false,
+      "income": 5000.0,
+      "tax": 0,
+      "biz_inst_count": 5,
+      "bank_count": 5,
+      "all_institutions": [
+        "民生银行",
+        "微众银行",
+        "中国银行",
+        "德清农商行",
+        "光大银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 5,
+      "status": ""
+    },
+    {
+      "name": "杭州天灰科技有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 1014.9,
+      "tax": 0.7424,
+      "biz_inst_count": 3,
+      "bank_count": 3,
+      "all_institutions": [
+        "中国银行",
+        "江苏银行",
+        "南京银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 3,
+      "status": ""
+    },
+    {
+      "name": "杭州太仆汽车科技有限公司",
+      "tag": "专精特新、国高新、创新型中小企业、科技型中小企业",
+      "tags": [
+        "专精特新",
+        "国高新",
+        "创新型中小企业",
+        "科技型中小企业"
+      ],
+      "has_tech": true,
+      "income": 100.0,
+      "tax": 0,
+      "biz_inst_count": 4,
+      "bank_count": 4,
+      "all_institutions": [
+        "余杭农商行",
+        "南京银行",
+        "民泰银行",
+        "温州银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 4,
+      "status": ""
+    },
+    {
+      "name": "杭州奥能电源设备有限公司",
+      "tag": "国高新、专精特新、专精特新小巨人、科技型中小企业、创新型中小企业、瞪羚企业、企业技术中心",
+      "tags": [
+        "国高新",
+        "专精特新",
+        "专精特新小巨人",
+        "科技型中小企业",
+        "创新型中小企业",
+        "瞪羚企业",
+        "企业技术中心"
+      ],
+      "has_tech": true,
+      "income": 32000.0,
+      "tax": 850.0,
+      "biz_inst_count": 2,
+      "bank_count": 2,
+      "all_institutions": [
+        "杭州银行",
+        "工商银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 2,
+      "status": ""
+    },
+    {
+      "name": "杭州妙角士网络科技有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 21.6,
+      "tax": 0.2533,
+      "biz_inst_count": 3,
+      "bank_count": 3,
+      "all_institutions": [
+        "九江银行青原支行",
+        "农商行",
+        "网商银行",
+        "京东金融"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 3,
+      "status": ""
+    },
+    {
+      "name": "杭州宁悦金属物资有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 8839.0,
+      "tax": 25.8,
+      "biz_inst_count": 0,
+      "bank_count": 0,
+      "all_institutions": [],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 0,
+      "status": ""
+    },
+    {
+      "name": "杭州宁远农业技术开发有限公司",
+      "tag": "省科小",
+      "tags": [
+        "省科小"
+      ],
+      "has_tech": true,
+      "income": 7200.0,
+      "tax": 0,
+      "biz_inst_count": 6,
+      "bank_count": 4,
+      "all_institutions": [
+        "中信银行",
+        "倪俊宇弟弟担保",
+        "微众银行",
+        "泰隆银行",
+        "支付宝-花呗",
+        "四川新网银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 6,
+      "status": ""
+    },
+    {
+      "name": "杭州宏程电子材料有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 7700.0,
+      "tax": 0.03,
+      "biz_inst_count": 2,
+      "bank_count": 2,
+      "all_institutions": [
+        "余杭农商行",
+        "泰隆银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 2,
+      "status": ""
+    },
+    {
+      "name": "杭州宝浩金属材料有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 1000.0,
+      "tax": 3.0,
+      "biz_inst_count": 4,
+      "bank_count": 4,
+      "all_institutions": [
+        "微众银行",
+        "萧山农商行",
+        "兴业银行",
+        "江苏银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 4,
+      "status": ""
+    },
+    {
+      "name": "杭州川呗科技有限公司",
+      "tag": "科技型中小企业（认证申请中）",
+      "tags": [
+        "科技型中小企业（认证申请中）"
+      ],
+      "has_tech": true,
+      "income": 0,
+      "tax": 0,
+      "biz_inst_count": 0,
+      "bank_count": 5,
+      "all_institutions": [
+        "中国银行",
+        "中信银行",
+        "杭州联合农商行",
+        "南银法巴消费金融",
+        "温州银行",
+        "工商银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 0,
+      "status": ""
+    },
+    {
+      "name": "杭州工强机械科技有限公司",
+      "tag": "国高新、科技型中小企业",
+      "tags": [
+        "国高新",
+        "科技型中小企业"
+      ],
+      "has_tech": true,
+      "income": 300.0,
+      "tax": 0,
+      "biz_inst_count": 5,
+      "bank_count": 4,
+      "all_institutions": [
+        "余杭农商行",
+        "微众银行",
+        "兴业消费金融",
+        "浙商银行",
+        "宁波银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 5,
+      "status": ""
+    },
+    {
+      "name": "杭州巧兰包装制品有限公司",
+      "tag": "国高新、科技型中小企业",
+      "tags": [
+        "国高新",
+        "科技型中小企业"
+      ],
+      "has_tech": true,
+      "income": 638.75,
+      "tax": 29.87,
+      "biz_inst_count": 5,
+      "bank_count": 5,
+      "all_institutions": [
+        "余杭农商行",
+        "平安银行",
+        "稠州银行个人",
+        "华瑞银行",
+        "宁波银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 5,
+      "status": ""
+    },
+    {
+      "name": "杭州巧龙建筑劳务有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 6920.0,
+      "tax": 145.0,
+      "biz_inst_count": 8,
+      "bank_count": 8,
+      "all_institutions": [
+        "中国银行",
+        "农业银行",
+        "北京银行",
+        "建设银行",
+        "工商银行",
+        "浙商银行",
+        "江西农商",
+        "交通银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 8,
+      "status": ""
+    },
+    {
+      "name": "杭州市拱墅区子兮建材经营部",
+      "tag": "无（个体经营部）（个体经营部）",
+      "tags": [
+        "无（个体经营部）（个体经营部）"
+      ],
+      "has_tech": true,
+      "income": 120.0,
+      "tax": 0,
+      "biz_inst_count": 4,
+      "bank_count": 4,
+      "all_institutions": [
+        "中国银行",
+        "杭州银行",
+        "徽商银行",
+        "北京银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 4,
+      "status": ""
+    },
+    {
+      "name": "杭州康嵘食品有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 5000.0,
+      "tax": 0,
+      "biz_inst_count": 0,
+      "bank_count": 0,
+      "all_institutions": [],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 0,
+      "status": ""
+    },
+    {
+      "name": "杭州必买网络科技有限公司",
+      "tag": "科小",
+      "tags": [
+        "科小"
+      ],
+      "has_tech": true,
+      "income": 1100.0,
+      "tax": 0,
+      "biz_inst_count": 2,
+      "bank_count": 1,
+      "all_institutions": [
+        "兴业消费金融",
+        "中国银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 2,
+      "status": ""
+    },
+    {
+      "name": "杭州怡浩工具有限公司",
+      "tag": "科技型中小企业",
+      "tags": [
+        "科技型中小企业"
+      ],
+      "has_tech": true,
+      "income": 100.0,
+      "tax": 0,
+      "biz_inst_count": 0,
+      "bank_count": 1,
+      "all_institutions": [
+        "中信银行",
+        "诸暨"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 0,
+      "status": ""
+    },
+    {
+      "name": "杭州恒炬电力科技有限公司",
+      "tag": "科技型中小企业",
+      "tags": [
+        "科技型中小企业"
+      ],
+      "has_tech": true,
+      "income": 700.0,
+      "tax": 38.0,
+      "biz_inst_count": 4,
+      "bank_count": 4,
+      "all_institutions": [
+        "余杭农商行",
+        "华瑞银行",
+        "福建华通银行",
+        "杭州联合农商行",
+        "陕西长银",
+        "国民"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 4,
+      "status": ""
+    },
+    {
+      "name": "杭州昂扬石力科技有限公司",
+      "tag": "",
+      "tags": [],
+      "has_tech": false,
+      "income": 828.0,
+      "tax": 29.0,
+      "biz_inst_count": 7,
+      "bank_count": 6,
+      "all_institutions": [
+        "微众银行",
+        "兴业消费金融",
+        "福建海峡银行",
+        "盛京银行",
+        "辽宁振兴银行",
+        "苏商银行",
+        "杭州联合农商行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 7,
+      "status": ""
+    },
+    {
+      "name": "杭州李杜餐饮有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 347.0,
+      "tax": 7.79,
+      "biz_inst_count": 2,
+      "bank_count": 6,
+      "all_institutions": [
+        "金城银行",
+        "微众银行",
+        "浙商银行",
+        "工商银行",
+        "网商银行",
+        "平安银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 2,
+      "status": ""
+    },
+    {
+      "name": "杭州松侠运输有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 1000.0,
+      "tax": 13.0,
+      "biz_inst_count": 1,
+      "bank_count": 1,
+      "all_institutions": [
+        "房屋贷款",
+        "杭州联合农商行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 1,
+      "status": ""
+    },
+    {
+      "name": "杭州桢诚科技有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 400.0,
+      "tax": 0,
+      "biz_inst_count": 6,
+      "bank_count": 5,
+      "all_institutions": [
+        "德清农商行",
+        "余杭农商行",
+        "杭州联合农商行",
+        "平安普惠",
+        "工商银行",
+        "微众银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 6,
+      "status": ""
+    },
+    {
+      "name": "杭州永优帝雅建材有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 79.4,
+      "tax": 2.92,
+      "biz_inst_count": 0,
+      "bank_count": 5,
+      "all_institutions": [
+        "农业银行",
+        "宁波银行",
+        "三湘银行",
+        "网商银行",
+        "微众银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 0,
+      "status": ""
+    },
+    {
+      "name": "杭州江河水电科技股份有限公司",
+      "tag": "专精特新、专精特新小巨人、科技型中小企业、创新型中小企业、企业技术中心、重点实验室（共建单位）",
+      "tags": [
+        "专精特新",
+        "专精特新小巨人",
+        "科技型中小企业",
+        "创新型中小企业",
+        "企业技术中心",
+        "重点实验室（共建单位）"
+      ],
+      "has_tech": true,
+      "income": 200.0,
+      "tax": 0.5,
+      "biz_inst_count": 12,
+      "bank_count": 11,
+      "all_institutions": [
+        "光大银行",
+        "中国银行",
+        "农业银行",
+        "杭州联合农商行",
+        "萧山农商行",
+        "工商银行",
+        "江苏银行",
+        "北京银行",
+        "温州银行",
+        "浦发银行",
+        "民生银行",
+        "永赢金融租赁"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 12,
+      "status": ""
+    },
+    {
+      "name": "杭州泓诚物业管理有限公司",
+      "tag": "无（小型物业未收录）（小型物业未收录）",
+      "tags": [
+        "无（小型物业未收录）（小型物业未收录）"
+      ],
+      "has_tech": true,
+      "income": 0,
+      "tax": 0,
+      "biz_inst_count": 4,
+      "bank_count": 3,
+      "all_institutions": [
+        "农业银行",
+        "工商银行",
+        "农商银行",
+        "支付宝-借呗"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 4,
+      "status": ""
+    },
+    {
+      "name": "杭州泰东装饰工程有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 580.0,
+      "tax": 0,
+      "biz_inst_count": 5,
+      "bank_count": 5,
+      "all_institutions": [
+        "余杭农商行",
+        "建设银行",
+        "杭州联合农商行",
+        "网商银行",
+        "江西安义农商"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 5,
+      "status": ""
+    },
+    {
+      "name": "杭州洗悦新材料技术有限公司",
+      "tag": "科小",
+      "tags": [
+        "科小"
+      ],
+      "has_tech": true,
+      "income": 0,
+      "tax": 0,
+      "biz_inst_count": 1,
+      "bank_count": 1,
+      "all_institutions": [
+        "工商银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 1,
+      "status": ""
+    },
+    {
+      "name": "杭州浙杭建设工程有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 0,
+      "tax": 0,
+      "biz_inst_count": 0,
+      "bank_count": 0,
+      "all_institutions": [],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 0,
+      "status": ""
+    },
+    {
+      "name": "杭州浩哉科技有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 0,
+      "tax": 0,
+      "biz_inst_count": 1,
+      "bank_count": 3,
+      "all_institutions": [
+        "杭州联合农商行",
+        "浙商银行",
+        "温州银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 1,
+      "status": ""
+    },
+    {
+      "name": "杭州海寓供应链管理有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 0,
+      "tax": 0,
+      "biz_inst_count": 7,
+      "bank_count": 7,
+      "all_institutions": [
+        "杭州银行",
+        "杭州联合农商行",
+        "工商银行",
+        "北京银行",
+        "余杭农商行",
+        "网商银行",
+        "宁波银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 7,
+      "status": ""
+    },
+    {
+      "name": "杭州澳锋国际贸易有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 41000.0,
+      "tax": 0,
+      "biz_inst_count": 2,
+      "bank_count": 5,
+      "all_institutions": [
+        "台州银行",
+        "前海",
+        "农业银行",
+        "宁波银行",
+        "蚂蚁消费金融",
+        "温州银行",
+        "平安银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 2,
+      "status": ""
+    },
+    {
+      "name": "杭州爱依诺飘依服饰有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 0,
+      "tax": 0,
+      "biz_inst_count": 2,
+      "bank_count": 5,
+      "all_institutions": [
+        "金华银行",
+        "民泰银行",
+        "台州银行",
+        "泰隆银行",
+        "温州银行",
+        "老家社"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 2,
+      "status": ""
+    },
+    {
+      "name": "杭州爱在家家居有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 549.0,
+      "tax": 0,
+      "biz_inst_count": 1,
+      "bank_count": 0,
+      "all_institutions": [
+        "杭州爱在家家居（企业借款）"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 1,
+      "status": ""
+    },
+    {
+      "name": "杭州牟溪信息科技有限公司",
+      "tag": "科技型中小企业",
+      "tags": [
+        "科技型中小企业"
+      ],
+      "has_tech": true,
+      "income": 0,
+      "tax": 0,
+      "biz_inst_count": 0,
+      "bank_count": 4,
+      "all_institutions": [
+        "杭州银行",
+        "杭州联合农商行",
+        "中国银行",
+        "南京银行",
+        "南银法巴消费金融"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 0,
+      "status": ""
+    },
+    {
+      "name": "杭州瑞迪汽车服务有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 1483.0,
+      "tax": 11.13,
+      "biz_inst_count": 3,
+      "bank_count": 10,
+      "all_institutions": [
+        "稠州银行",
+        "中国银行",
+        "民泰银行",
+        "温州银行",
+        "浙商银行",
+        "余杭农商行",
+        "萧山农商行",
+        "泰隆银行",
+        "交通银行",
+        "中信银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 3,
+      "status": ""
+    },
+    {
+      "name": "杭州皎洁口腔保健用品有限公司",
+      "tag": "科技型中小企业",
+      "tags": [
+        "科技型中小企业"
+      ],
+      "has_tech": true,
+      "income": 4000.0,
+      "tax": 0.004,
+      "biz_inst_count": 0,
+      "bank_count": 1,
+      "all_institutions": [
+        "中信银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 0,
+      "status": ""
+    },
+    {
+      "name": "杭州盒喵网络科技有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 600.0,
+      "tax": 0,
+      "biz_inst_count": 0,
+      "bank_count": 1,
+      "all_institutions": [
+        "网商银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 0,
+      "status": ""
+    },
+    {
+      "name": "杭州科丰生态农业开发有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 1500.0,
+      "tax": 0,
+      "biz_inst_count": 2,
+      "bank_count": 2,
+      "all_institutions": [
+        "泰隆银行",
+        "农业银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 2,
+      "status": ""
+    },
+    {
+      "name": "杭州维道交通设施工程有限公司",
+      "tag": "国高新、科技型中小企业",
+      "tags": [
+        "国高新",
+        "科技型中小企业"
+      ],
+      "has_tech": true,
+      "income": 563.0,
+      "tax": 0.0024,
+      "biz_inst_count": 1,
+      "bank_count": 0,
+      "all_institutions": [
+        "华能贵诚信托企业贷"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 1,
+      "status": ""
+    },
+    {
+      "name": "杭州脉兴医疗科技有限公司",
+      "tag": "国高新、创新型中小企业、科技进步奖、科技企业研发中心",
+      "tags": [
+        "国高新",
+        "创新型中小企业",
+        "科技进步奖",
+        "科技企业研发中心"
+      ],
+      "has_tech": true,
+      "income": 300.0,
+      "tax": 0,
+      "biz_inst_count": 4,
+      "bank_count": 4,
+      "all_institutions": [
+        "余杭农商行",
+        "民泰银行",
+        "泰隆银行",
+        "建设银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 4,
+      "status": ""
+    },
+    {
+      "name": "杭州航策信息科技有限公司",
+      "tag": "创新型中小企业、科技型中小企业",
+      "tags": [
+        "创新型中小企业",
+        "科技型中小企业"
+      ],
+      "has_tech": true,
+      "income": 210.0,
+      "tax": 0,
+      "biz_inst_count": 1,
+      "bank_count": 3,
+      "all_institutions": [
+        "微众银行",
+        "民泰银行",
+        "宁波银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 1,
+      "status": ""
+    },
+    {
+      "name": "杭州茂耀科技有限公司",
+      "tag": "科技型中小企业",
+      "tags": [
+        "科技型中小企业"
+      ],
+      "has_tech": true,
+      "income": 658.0,
+      "tax": 11.0,
+      "biz_inst_count": 5,
+      "bank_count": 5,
+      "all_institutions": [
+        "萧山农商行",
+        "微众银行",
+        "民生银行",
+        "亿联银行",
+        "网商银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 5,
+      "status": ""
+    },
+    {
+      "name": "杭州茗典食品有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 0,
+      "tax": 0,
+      "biz_inst_count": 5,
+      "bank_count": 5,
+      "all_institutions": [
+        "泰隆银行",
+        "温州银行",
+        "上海银行",
+        "余杭农商行",
+        "中国银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 5,
+      "status": ""
+    },
+    {
+      "name": "杭州豪斯特物流有限公司",
+      "tag": "科技型中小企业",
+      "tags": [
+        "科技型中小企业"
+      ],
+      "has_tech": true,
+      "income": 5700.0,
+      "tax": 0,
+      "biz_inst_count": 6,
+      "bank_count": 6,
+      "all_institutions": [
+        "南京银行",
+        "交通银行",
+        "北京银行",
+        "浙商银行",
+        "金城银行",
+        "萧山农商行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 6,
+      "status": ""
+    },
+    {
+      "name": "杭州辛萌服饰有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 1000.0,
+      "tax": 0,
+      "biz_inst_count": 2,
+      "bank_count": 2,
+      "all_institutions": [
+        "农业银行",
+        "中国银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 2,
+      "status": ""
+    },
+    {
+      "name": "杭州金月服装店",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 0,
+      "tax": 0,
+      "biz_inst_count": 0,
+      "bank_count": 4,
+      "all_institutions": [
+        "萧山农商行",
+        "农业银行",
+        "中国银行",
+        "杭州联合农商行",
+        "南银法巴消费金融"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 0,
+      "status": ""
+    },
+    {
+      "name": "杭州金黔豹酒业有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 0,
+      "tax": 0,
+      "biz_inst_count": 0,
+      "bank_count": 0,
+      "all_institutions": [],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 0,
+      "status": ""
+    },
+    {
+      "name": "杭州长济医疗科技有限公司",
+      "tag": "国高新、创新型中小企业、科技型中小企业",
+      "tags": [
+        "国高新",
+        "创新型中小企业",
+        "科技型中小企业"
+      ],
+      "has_tech": true,
+      "income": 2284.0,
+      "tax": 0,
+      "biz_inst_count": 5,
+      "bank_count": 4,
+      "all_institutions": [
+        "中国银行",
+        "临安农商行",
+        "南京银行",
+        "江苏银行",
+        "中关村"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 5,
+      "status": ""
+    },
+    {
+      "name": "杭州阳锋电力工程有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 685.0,
+      "tax": 7.4,
+      "biz_inst_count": 0,
+      "bank_count": 4,
+      "all_institutions": [
+        "兴业消费金融",
+        "温州银行",
+        "萧山农商行",
+        "上海银行",
+        "江苏银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 0,
+      "status": ""
+    },
+    {
+      "name": "杭州鸽巢科技有限公司",
+      "tag": "国高新、科技型中小企业、创新型中小企业",
+      "tags": [
+        "国高新",
+        "科技型中小企业",
+        "创新型中小企业"
+      ],
+      "has_tech": true,
+      "income": 100.0,
+      "tax": 0,
+      "biz_inst_count": 2,
+      "bank_count": 2,
+      "all_institutions": [
+        "杭州联合农商行",
+        "余杭农商行",
+        "兴业消费金融",
+        "中邮消费金融"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 2,
+      "status": ""
+    },
+    {
+      "name": "杭州龙方工程技术有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 1100.0,
+      "tax": 0,
+      "biz_inst_count": 1,
+      "bank_count": 5,
+      "all_institutions": [
+        "杭州联合农商行",
+        "杭州银行",
+        "招商银行",
+        "网商银行",
+        "微众银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 1,
+      "status": ""
+    },
+    {
+      "name": "桐庐富达食用菌",
+      "tag": "国高新、科技型中小企业",
+      "tags": [
+        "国高新",
+        "科技型中小企业"
+      ],
+      "has_tech": true,
+      "income": 0,
+      "tax": 0,
+      "biz_inst_count": 4,
+      "bank_count": 4,
+      "all_institutions": [
+        "桐庐农商行",
+        "微众银行",
+        "泰隆银行",
+        "宁波银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 4,
+      "status": ""
+    },
+    {
+      "name": "江河水电科技",
+      "tag": "国家级专精特新小巨人、国高新、省专精特新、科技型中小企业、创新型中小企业、企业技术中心、重点实验室（共建单位）",
+      "tags": [
+        "国家级专精特新小巨人",
+        "国高新",
+        "省专精特新",
+        "科技型中小企业",
+        "创新型中小企业",
+        "企业技术中心",
+        "重点实验室（共建单位）"
+      ],
+      "has_tech": true,
+      "income": 200.0,
+      "tax": 0.5,
+      "biz_inst_count": 13,
+      "bank_count": 12,
+      "all_institutions": [
+        "光大银行",
+        "中国银行",
+        "农业银行",
+        "杭州联合农商行",
+        "萧山农商行",
+        "工商银行",
+        "江苏银行",
+        "北京银行",
+        "温州银行",
+        "浦发银行",
+        "民生银行",
+        "永赢金融租赁",
+        "微众银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 13,
+      "status": ""
+    },
+    {
+      "name": "浙江万企动力科技有限公司",
+      "tag": "科技型中小企业、创新型中小企业",
+      "tags": [
+        "科技型中小企业",
+        "创新型中小企业"
+      ],
+      "has_tech": true,
+      "income": 1100.0,
+      "tax": 0.0005,
+      "biz_inst_count": 3,
+      "bank_count": 6,
+      "all_institutions": [
+        "农业银行",
+        "杭州联合农商行",
+        "微众银行",
+        "北京银行",
+        "宁波银行",
+        "招商银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 3,
+      "status": ""
+    },
+    {
+      "name": "浙江修诚生物医药科技有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 100.0,
+      "tax": 0,
+      "biz_inst_count": 1,
+      "bank_count": 1,
+      "all_institutions": [
+        "温州银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 1,
+      "status": ""
+    },
+    {
+      "name": "浙江兆泉智能科技有限公司",
+      "tag": "科技型中小企业",
+      "tags": [
+        "科技型中小企业"
+      ],
+      "has_tech": true,
+      "income": 111.0,
+      "tax": 0,
+      "biz_inst_count": 1,
+      "bank_count": 2,
+      "all_institutions": [
+        "儿子名下",
+        "义乌房子",
+        "建设银行",
+        "工商银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 1,
+      "status": ""
+    },
+    {
+      "name": "浙江华立机械有限公司",
+      "tag": "科技型中小企业",
+      "tags": [
+        "科技型中小企业"
+      ],
+      "has_tech": true,
+      "income": 180.0,
+      "tax": 0,
+      "biz_inst_count": 2,
+      "bank_count": 2,
+      "all_institutions": [
+        "农商行",
+        "工商银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 2,
+      "status": ""
+    },
+    {
+      "name": "浙江和曜医药科技",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 9000.0,
+      "tax": 150.0,
+      "biz_inst_count": 1,
+      "bank_count": 3,
+      "all_institutions": [
+        "中国银行",
+        "金华银行",
+        "宁波银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 1,
+      "status": ""
+    },
+    {
+      "name": "浙江国利英核机电设备安装有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 4000.0,
+      "tax": 0,
+      "biz_inst_count": 4,
+      "bank_count": 4,
+      "all_institutions": [
+        "泰隆银行",
+        "苏宁银行",
+        "邮储银行",
+        "工商银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 4,
+      "status": ""
+    },
+    {
+      "name": "浙江天堃通讯工程",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 1000.0,
+      "tax": 50.0,
+      "biz_inst_count": 2,
+      "bank_count": 1,
+      "all_institutions": [
+        "临安农商行",
+        "360借条"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 2,
+      "status": ""
+    },
+    {
+      "name": "浙江智源消防安全工程有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 1600.0,
+      "tax": 0,
+      "biz_inst_count": 5,
+      "bank_count": 12,
+      "all_institutions": [
+        "微众银行",
+        "建设银行",
+        "众邦银行",
+        "杭州银行",
+        "台州银行",
+        "中关村",
+        "网商银行",
+        "安徽新安",
+        "工商银行",
+        "蚂蚁消费金融",
+        "度小满金融",
+        "马上消费金融",
+        "徽商银行",
+        "中银",
+        "北京银行",
+        "哈尔滨银行",
+        "晋商银行",
+        "振兴银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 5,
+      "status": ""
+    },
+    {
+      "name": "浙江林致家具制造有限公司",
+      "tag": "科技型中小企业（2020年发布）",
+      "tags": [
+        "科技型中小企业（2020年发布）"
+      ],
+      "has_tech": true,
+      "income": 2700.0,
+      "tax": 0,
+      "biz_inst_count": 5,
+      "bank_count": 5,
+      "all_institutions": [
+        "德清农商行",
+        "网商银行",
+        "微众银行",
+        "众邦银行",
+        "泰隆银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 5,
+      "status": ""
+    },
+    {
+      "name": "浙江瑞耀信息技术有限公司",
+      "tag": "国高新、科技型中小企业",
+      "tags": [
+        "国高新",
+        "科技型中小企业"
+      ],
+      "has_tech": true,
+      "income": 1204.0,
+      "tax": 11.1,
+      "biz_inst_count": 4,
+      "bank_count": 6,
+      "all_institutions": [
+        "温州银行",
+        "工商银行",
+        "农商银行",
+        "农业银行",
+        "微众银行",
+        "招商银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 4,
+      "status": ""
+    },
+    {
+      "name": "浙江腾视算擎科技有限公司",
+      "tag": "国高新、专精特新、科技型中小企业、创新型中小企业",
+      "tags": [
+        "国高新",
+        "专精特新",
+        "科技型中小企业",
+        "创新型中小企业"
+      ],
+      "has_tech": true,
+      "income": 1775.0,
+      "tax": 0.02,
+      "biz_inst_count": 11,
+      "bank_count": 11,
+      "all_institutions": [
+        "富阳农商行",
+        "交通银行",
+        "杭州联合农商行",
+        "中国银行",
+        "浦发银行",
+        "宁波银行",
+        "农业银行",
+        "江苏银行",
+        "中信银行",
+        "华夏银行",
+        "杭州银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 11,
+      "status": ""
+    },
+    {
+      "name": "浙江茗典食品科技有限公司",
+      "tag": "科技型中小企业、创新型中小企业",
+      "tags": [
+        "科技型中小企业",
+        "创新型中小企业"
+      ],
+      "has_tech": true,
+      "income": 3812.0,
+      "tax": 0.01,
+      "biz_inst_count": 11,
+      "bank_count": 9,
+      "all_institutions": [
+        "中信银行",
+        "中国银行",
+        "永赢金融租赁",
+        "浙银金融租赁",
+        "泰隆银行",
+        "温州银行",
+        "上海银行",
+        "余杭农商行",
+        "宁波银行",
+        "浙商银行",
+        "网商银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 11,
+      "status": ""
+    },
+    {
+      "name": "浙江赢科慧康科技",
+      "tag": "科技型中小企业",
+      "tags": [
+        "科技型中小企业"
+      ],
+      "has_tech": true,
+      "income": 3979.0,
+      "tax": 59.07,
+      "biz_inst_count": 0,
+      "bank_count": 0,
+      "all_institutions": [],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 0,
+      "status": ""
+    },
+    {
+      "name": "浙江轩日科技股份有限公司",
+      "tag": "国高新、科技型中小企业、创新型中小企业",
+      "tags": [
+        "国高新",
+        "科技型中小企业",
+        "创新型中小企业"
+      ],
+      "has_tech": true,
+      "income": 6700.0,
+      "tax": 0,
+      "biz_inst_count": 7,
+      "bank_count": 7,
+      "all_institutions": [
+        "杭州联合农商行",
+        "中国银行",
+        "建设银行",
+        "广发银行",
+        "交通银行",
+        "南京银行",
+        "江苏银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 7,
+      "status": ""
+    },
+    {
+      "name": "浙江铭安潮居智能科技有限公司",
+      "tag": "国高新、专精特新、科技型中小企业、创新型中小企业、企业技术中心",
+      "tags": [
+        "国高新",
+        "专精特新",
+        "科技型中小企业",
+        "创新型中小企业",
+        "企业技术中心"
+      ],
+      "has_tech": true,
+      "income": 41100.0,
+      "tax": 0,
+      "biz_inst_count": 11,
+      "bank_count": 11,
+      "all_institutions": [
+        "江苏银行",
+        "农商钱塘支行",
+        "工商银行",
+        "杭州联合农商行",
+        "浦发银行",
+        "中国银行",
+        "浙商银行",
+        "南京银行",
+        "农业银行",
+        "广发银行",
+        "邮储银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 11,
+      "status": ""
+    },
+    {
+      "name": "浙江青庭科技有限公司",
+      "tag": "国高新、科技型中小企业、创新型中小企业",
+      "tags": [
+        "国高新",
+        "科技型中小企业",
+        "创新型中小企业"
+      ],
+      "has_tech": true,
+      "income": 1800.0,
+      "tax": 0,
+      "biz_inst_count": 7,
+      "bank_count": 7,
+      "all_institutions": [
+        "杭州联合农商行",
+        "中国银行",
+        "余杭农商行",
+        "江苏银行",
+        "四川新网银行",
+        "金城银行",
+        "温州银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 7,
+      "status": ""
+    },
+    {
+      "name": "浙理氢能科技有限公司",
+      "tag": "企业技术中心、专精特新、科技型中小企业、创新型中小企业",
+      "tags": [
+        "企业技术中心",
+        "专精特新",
+        "科技型中小企业",
+        "创新型中小企业"
+      ],
+      "has_tech": true,
+      "income": 63000.0,
+      "tax": 0,
+      "biz_inst_count": 7,
+      "bank_count": 9,
+      "all_institutions": [
+        "工商银行",
+        "中国银行",
+        "华夏银行",
+        "平安银行",
+        "江苏银行",
+        "兴业银行",
+        "稠州银行",
+        "杭州银行",
+        "温州银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 7,
+      "status": ""
+    },
+    {
+      "name": "深圳腾视科技有限公司",
+      "tag": "国高新、专精特新",
+      "tags": [
+        "国高新",
+        "专精特新"
+      ],
+      "has_tech": true,
+      "income": 4585.0,
+      "tax": 0,
+      "biz_inst_count": 3,
+      "bank_count": 3,
+      "all_institutions": [
+        "中国银行",
+        "工商银行",
+        "建设银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 3,
+      "status": ""
+    },
+    {
+      "name": "湖州南木纳米科技有限公司",
+      "tag": "国高新、专精特新、科技型中小企业、创新型中小企业",
+      "tags": [
+        "国高新",
+        "专精特新",
+        "科技型中小企业",
+        "创新型中小企业"
+      ],
+      "has_tech": true,
+      "income": 5597.0,
+      "tax": 0,
+      "biz_inst_count": 5,
+      "bank_count": 5,
+      "all_institutions": [
+        "中国银行",
+        "建设银行",
+        "宁波银行",
+        "湖州农商银行",
+        "湖州银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 5,
+      "status": ""
+    },
+    {
+      "name": "王黎青",
+      "tag": "无科技标签",
+      "tags": [
+        "无科技标签"
+      ],
+      "has_tech": true,
+      "income": 0,
+      "tax": 0,
+      "biz_inst_count": 3,
+      "bank_count": 3,
+      "all_institutions": [
+        "建设银行",
+        "工商银行",
+        "萧山农商行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 3,
+      "status": ""
+    },
+    {
+      "name": "皎洁口腔",
+      "tag": "科技型中小企业",
+      "tags": [
+        "科技型中小企业"
+      ],
+      "has_tech": true,
+      "income": 4000.0,
+      "tax": 40.0,
+      "biz_inst_count": 7,
+      "bank_count": 7,
+      "all_institutions": [
+        "中信银行",
+        "平安银行",
+        "民泰银行",
+        "南京银行",
+        "临安农商行",
+        "温州银行",
+        "金华银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 7,
+      "status": ""
+    },
+    {
+      "name": "碧瑞兰特（杭州）网络科技有限公司",
+      "tag": "无",
+      "tags": [
+        "无"
+      ],
+      "has_tech": true,
+      "income": 0,
+      "tax": 0,
+      "biz_inst_count": 3,
+      "bank_count": 1,
+      "all_institutions": [
+        "萧农贷",
+        "中国银行",
+        "中邮消费金融"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 3,
+      "status": ""
+    },
+    {
+      "name": "碳一新能源集团有限责任公司",
+      "tag": "国高新、省专精特新（重点支持）、制造业单项冠军、省创新型中小企业、省科技型中小企业、省级数字化车间、省级绿色低碳工厂",
+      "tags": [
+        "国高新",
+        "省专精特新（重点支持）",
+        "制造业单项冠军",
+        "省创新型中小企业",
+        "省科技型中小企业",
+        "省级数字化车间",
+        "省级绿色低碳工厂"
+      ],
+      "has_tech": true,
+      "income": 44100.0,
+      "tax": 0,
+      "biz_inst_count": 0,
+      "bank_count": 2,
+      "all_institutions": [
+        "江苏银行",
+        "宁波银行"
+      ],
+      "debt_total": 0,
+      "legal_age": null,
+      "tax_grade": "",
+      "is_dual_sign": false,
+      "inst_count": 0,
+      "status": ""
+    }
+  ],
+  "active": [],
+  "insts": [
+    {
+      "name": "中国银行",
+      "count": 34
+    },
+    {
+      "name": "工商银行",
+      "count": 27
+    },
+    {
+      "name": "杭州联合农商行",
+      "count": 25
+    },
+    {
+      "name": "江苏银行",
+      "count": 21
+    },
+    {
+      "name": "微众银行",
+      "count": 21
+    },
+    {
+      "name": "温州银行",
+      "count": 17
+    },
+    {
+      "name": "余杭农商行",
+      "count": 17
+    },
+    {
+      "name": "农业银行",
+      "count": 16
+    },
+    {
+      "name": "泰隆银行",
+      "count": 15
+    },
+    {
+      "name": "宁波银行",
+      "count": 15
+    },
+    {
+      "name": "建设银行",
+      "count": 14
+    },
+    {
+      "name": "网商银行",
+      "count": 14
+    },
+    {
+      "name": "萧山农商行",
+      "count": 13
+    },
+    {
+      "name": "中信银行",
+      "count": 11
+    },
+    {
+      "name": "北京银行",
+      "count": 10
+    },
+    {
+      "name": "南京银行",
+      "count": 10
+    },
+    {
+      "name": "交通银行",
+      "count": 9
+    },
+    {
+      "name": "民泰银行",
+      "count": 9
+    },
+    {
+      "name": "浙商银行",
+      "count": 9
+    },
+    {
+      "name": "杭州银行",
+      "count": 8
+    },
+    {
+      "name": "平安银行",
+      "count": 6
+    },
+    {
+      "name": "光大银行",
+      "count": 6
+    },
+    {
+      "name": "民生银行",
+      "count": 5
+    },
+    {
+      "name": "兴业银行",
+      "count": 4
+    },
+    {
+      "name": "上海银行",
+      "count": 4
+    },
+    {
+      "name": "四川新网银行",
+      "count": 4
+    },
+    {
+      "name": "金城银行",
+      "count": 4
+    },
+    {
+      "name": "金华银行",
+      "count": 4
+    },
+    {
+      "name": "招商银行",
+      "count": 4
+    },
+    {
+      "name": "临安农商行",
+      "count": 4
+    },
+    {
+      "name": "浦发银行",
+      "count": 4
+    },
+    {
+      "name": "广发银行",
+      "count": 3
+    },
+    {
+      "name": "邮储银行",
+      "count": 3
+    },
+    {
+      "name": "德清农商行",
+      "count": 3
+    },
+    {
+      "name": "台州银行",
+      "count": 3
+    },
+    {
+      "name": "亿联银行",
+      "count": 2
+    },
+    {
+      "name": "农商行",
+      "count": 2
+    },
+    {
+      "name": "华瑞银行",
+      "count": 2
+    },
+    {
+      "name": "徽商银行",
+      "count": 2
+    },
+    {
+      "name": "农商银行",
+      "count": 2
+    },
+    {
+      "name": "稠州银行",
+      "count": 2
+    },
+    {
+      "name": "众邦银行",
+      "count": 2
+    },
+    {
+      "name": "华夏银行",
+      "count": 2
+    },
+    {
+      "name": "渤海银行萧山支行",
+      "count": 1
+    },
+    {
+      "name": "徐州农商",
+      "count": 1
+    },
+    {
+      "name": "农信",
+      "count": 1
+    },
+    {
+      "name": "瑞丰农商",
+      "count": 1
+    },
+    {
+      "name": "中关村银行",
+      "count": 1
+    },
+    {
+      "name": "九江银行青原支行",
+      "count": 1
+    },
+    {
+      "name": "稠州银行个人",
+      "count": 1
+    },
+    {
+      "name": "江西农商",
+      "count": 1
+    },
+    {
+      "name": "福建华通银行",
+      "count": 1
+    },
+    {
+      "name": "福建海峡银行",
+      "count": 1
+    },
+    {
+      "name": "盛京银行",
+      "count": 1
+    },
+    {
+      "name": "辽宁振兴银行",
+      "count": 1
+    },
+    {
+      "name": "苏商银行",
+      "count": 1
+    },
+    {
+      "name": "三湘银行",
+      "count": 1
+    },
+    {
+      "name": "江西安义农商",
+      "count": 1
+    },
+    {
+      "name": "桐庐农商行",
+      "count": 1
+    },
+    {
+      "name": "苏宁银行",
+      "count": 1
+    },
+    {
+      "name": "哈尔滨银行",
+      "count": 1
+    },
+    {
+      "name": "晋商银行",
+      "count": 1
+    },
+    {
+      "name": "振兴银行",
+      "count": 1
+    },
+    {
+      "name": "富阳农商行",
+      "count": 1
+    },
+    {
+      "name": "农商钱塘支行",
+      "count": 1
+    },
+    {
+      "name": "湖州农商银行",
+      "count": 1
+    },
+    {
+      "name": "湖州银行",
+      "count": 1
+    }
+  ],
+  "banks": [
+    {
+      "name": "中国银行",
+      "count": 34
+    },
+    {
+      "name": "工商银行",
+      "count": 27
+    },
+    {
+      "name": "杭州联合农商行",
+      "count": 25
+    },
+    {
+      "name": "江苏银行",
+      "count": 21
+    },
+    {
+      "name": "微众银行",
+      "count": 21
+    },
+    {
+      "name": "温州银行",
+      "count": 17
+    },
+    {
+      "name": "余杭农商行",
+      "count": 17
+    },
+    {
+      "name": "农业银行",
+      "count": 16
+    },
+    {
+      "name": "泰隆银行",
+      "count": 15
+    },
+    {
+      "name": "宁波银行",
+      "count": 15
+    },
+    {
+      "name": "建设银行",
+      "count": 14
+    },
+    {
+      "name": "网商银行",
+      "count": 14
+    },
+    {
+      "name": "萧山农商行",
+      "count": 13
+    },
+    {
+      "name": "中信银行",
+      "count": 11
+    },
+    {
+      "name": "北京银行",
+      "count": 10
+    },
+    {
+      "name": "南京银行",
+      "count": 10
+    },
+    {
+      "name": "交通银行",
+      "count": 9
+    },
+    {
+      "name": "民泰银行",
+      "count": 9
+    },
+    {
+      "name": "浙商银行",
+      "count": 9
+    },
+    {
+      "name": "杭州银行",
+      "count": 8
+    },
+    {
+      "name": "平安银行",
+      "count": 6
+    },
+    {
+      "name": "光大银行",
+      "count": 6
+    },
+    {
+      "name": "民生银行",
+      "count": 5
+    },
+    {
+      "name": "兴业银行",
+      "count": 4
+    },
+    {
+      "name": "上海银行",
+      "count": 4
+    },
+    {
+      "name": "四川新网银行",
+      "count": 4
+    },
+    {
+      "name": "金城银行",
+      "count": 4
+    },
+    {
+      "name": "金华银行",
+      "count": 4
+    },
+    {
+      "name": "招商银行",
+      "count": 4
+    },
+    {
+      "name": "临安农商行",
+      "count": 4
+    },
+    {
+      "name": "浦发银行",
+      "count": 4
+    },
+    {
+      "name": "广发银行",
+      "count": 3
+    },
+    {
+      "name": "邮储银行",
+      "count": 3
+    },
+    {
+      "name": "德清农商行",
+      "count": 3
+    },
+    {
+      "name": "台州银行",
+      "count": 3
+    },
+    {
+      "name": "亿联银行",
+      "count": 2
+    },
+    {
+      "name": "农商行",
+      "count": 2
+    },
+    {
+      "name": "华瑞银行",
+      "count": 2
+    },
+    {
+      "name": "徽商银行",
+      "count": 2
+    },
+    {
+      "name": "农商银行",
+      "count": 2
+    },
+    {
+      "name": "稠州银行",
+      "count": 2
+    },
+    {
+      "name": "众邦银行",
+      "count": 2
+    },
+    {
+      "name": "华夏银行",
+      "count": 2
+    },
+    {
+      "name": "渤海银行萧山支行",
+      "count": 1
+    },
+    {
+      "name": "徐州农商",
+      "count": 1
+    },
+    {
+      "name": "农信",
+      "count": 1
+    },
+    {
+      "name": "瑞丰农商",
+      "count": 1
+    },
+    {
+      "name": "中关村银行",
+      "count": 1
+    },
+    {
+      "name": "九江银行青原支行",
+      "count": 1
+    },
+    {
+      "name": "稠州银行个人",
+      "count": 1
+    },
+    {
+      "name": "江西农商",
+      "count": 1
+    },
+    {
+      "name": "福建华通银行",
+      "count": 1
+    },
+    {
+      "name": "福建海峡银行",
+      "count": 1
+    },
+    {
+      "name": "盛京银行",
+      "count": 1
+    },
+    {
+      "name": "辽宁振兴银行",
+      "count": 1
+    },
+    {
+      "name": "苏商银行",
+      "count": 1
+    },
+    {
+      "name": "三湘银行",
+      "count": 1
+    },
+    {
+      "name": "江西安义农商",
+      "count": 1
+    },
+    {
+      "name": "桐庐农商行",
+      "count": 1
+    },
+    {
+      "name": "苏宁银行",
+      "count": 1
+    },
+    {
+      "name": "哈尔滨银行",
+      "count": 1
+    },
+    {
+      "name": "晋商银行",
+      "count": 1
+    },
+    {
+      "name": "振兴银行",
+      "count": 1
+    },
+    {
+      "name": "富阳农商行",
+      "count": 1
+    },
+    {
+      "name": "农商钱塘支行",
+      "count": 1
+    },
+    {
+      "name": "湖州农商银行",
+      "count": 1
+    },
+    {
+      "name": "湖州银行",
+      "count": 1
+    }
+  ],
+  "non_bank_insts": [
+    {
+      "name": "兴业消费金融",
+      "count": 9
+    },
+    {
+      "name": "南银法巴消费金融",
+      "count": 5
+    },
+    {
+      "name": "永赢金融租赁",
+      "count": 4
+    },
+    {
+      "name": "蚂蚁消费金融",
+      "count": 4
+    },
+    {
+      "name": "度小满金融",
+      "count": 2
+    },
+    {
+      "name": "京东金融",
+      "count": 2
+    },
+    {
+      "name": "中关村",
+      "count": 2
+    },
+    {
+      "name": "中邮消费金融",
+      "count": 2
+    },
+    {
+      "name": "小雨点",
+      "count": 1
+    },
+    {
+      "name": "北京消金",
+      "count": 1
+    },
+    {
+      "name": "五矿信托",
+      "count": 1
+    },
+    {
+      "name": "倪俊宇弟弟担保",
+      "count": 1
+    },
+    {
+      "name": "支付宝-花呗",
+      "count": 1
+    },
+    {
+      "name": "诸暨",
+      "count": 1
+    },
+    {
+      "name": "陕西长银",
+      "count": 1
+    },
+    {
+      "name": "国民",
+      "count": 1
+    },
+    {
+      "name": "房屋贷款",
+      "count": 1
+    },
+    {
+      "name": "平安普惠",
+      "count": 1
+    },
+    {
+      "name": "支付宝-借呗",
+      "count": 1
+    },
+    {
+      "name": "前海",
+      "count": 1
+    },
+    {
+      "name": "老家社",
+      "count": 1
+    },
+    {
+      "name": "杭州爱在家家居（企业借款）",
+      "count": 1
+    },
+    {
+      "name": "华能贵诚信托企业贷",
+      "count": 1
+    },
+    {
+      "name": "儿子名下",
+      "count": 1
+    },
+    {
+      "name": "义乌房子",
+      "count": 1
+    },
+    {
+      "name": "360借条",
+      "count": 1
+    },
+    {
+      "name": "安徽新安",
+      "count": 1
+    },
+    {
+      "name": "马上消费金融",
+      "count": 1
+    },
+    {
+      "name": "中银",
+      "count": 1
+    },
+    {
+      "name": "浙银金融租赁",
+      "count": 1
+    },
+    {
+      "name": "萧农贷",
+      "count": 1
+    }
+  ],
+  "products": [],
+  "recommendations": {},
+  "completeness": {},
+  "details": {},
+  "tags": [
+    "专精特新",
+    "专精特新小巨人",
+    "企业技术中心",
+    "凯亚姆——省科小",
+    "创新型中小企业",
+    "制造业单项冠军",
+    "国家级专精特新小巨人",
+    "国科小",
+    "国高新",
+    "无",
+    "无科技标签",
+    "无（个体经营部）（个体经营部）",
+    "无（小型物业未收录）（小型物业未收录）",
+    "省专精特新",
+    "省专精特新（重点支持）",
+    "省创新型中小企业",
+    "省科小",
+    "省科小/科技型中小企业",
+    "省科技型中小企业",
+    "省级数字化车间",
+    "省级智能工厂",
+    "省级绿色低碳工厂",
+    "瞪羚企业",
+    "科小",
+    "科技企业研发中心",
+    "科技型中小企业",
+    "科技型中小企业（2020年发布）",
+    "科技型中小企业（认证申请中）",
+    "科技进步奖",
+    "重点实验室（共建单位）"
+  ],
+  "rules": {
+    "tiers": {},
+    "rates": {}
+  },
+  "update_time": "2026-08-05 04:25"
+}
