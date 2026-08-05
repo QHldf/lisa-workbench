@@ -457,6 +457,81 @@ function showDetail(name) {
   document.getElementById('detailContent').innerHTML = html;
   document.getElementById('detailModal').style.display = 'block';
 }
+
+// ========== 客户方案 ==========
+function showScheme(name) {
+  const client = DATA.clients.find(c => c.name === name);
+  if (!client) return;
+  const recs = DATA.recommendations && DATA.recommendations[name];
+  
+  let html = `<h3 style="margin-bottom:12px">${name} - 融资方案</h3>`;
+  
+  // 关键指标
+  html += `<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px">
+    <div class="stat" style="flex:1;min-width:70px"><div class="num" style="font-size:16px">${client.income || 0}</div><div class="label">开票(万)</div></div>
+    <div class="stat" style="flex:1;min-width:70px"><div class="num" style="font-size:16px">${client.tax || 0}</div><div class="label">纳税(万)</div></div>
+    <div class="stat" style="flex:1;min-width:70px"><div class="num" style="font-size:16px">${client.debt_total || 0}</div><div class="label">负债(万)</div></div>
+    <div class="stat" style="flex:1;min-width:70px"><div class="num" style="font-size:16px">${client.biz_inst_count || client.inst_count || 0}</div><div class="label">机构数</div></div>
+  </div>`;
+  
+  // 客户标签
+  if (client.tag) {
+    html += `<div style="margin-bottom:12px">🏷️ ${client.tag}</div>`;
+  }
+  
+  // 推荐银行
+  if (recs && recs.length > 0) {
+    html += `<div style="margin-bottom:12px"><strong>推荐银行：</strong></div>`;
+    recs.forEach((r, i) => {
+      html += `<div class="card" style="margin-bottom:8px">
+        <div class="name">${i+1}. ${r.bank}</div>
+        <div class="meta">💰 额度${r.amount || '待定'}万 | 利率${r.rate || '待定'}% | ${r.reason || ''}</div>
+      </div>`;
+    });
+  } else {
+    html += `<div style="color:#999">暂无推荐方案，请联系客户经理</div>`;
+  }
+  
+  // 详细数据
+  const detail = DATA.details && DATA.details[name];
+  if (detail) {
+    html += `<div style="margin-top:12px;padding-top:12px;border-top:1px solid #eee">
+      <strong>详细信息</strong><br>
+      法人：${detail.legal_name || '未知'}<br>
+      年龄：${detail.legal_age || '未知'}岁<br>
+      双签：${detail.is_dual_sign ? '是' : '否'}<br>
+      征信查询：近3月${detail.q3 || 0}次，近6月${detail.q6 || 0}次<br>
+      信用卡使用率：${detail.cc_usage || 0}%
+    </div>`;
+  }
+  
+  document.getElementById('detailContent').innerHTML = html;
+  document.getElementById('detailModal').style.display = 'block';
+}
+
+// ========== 更新客户状态 ==========
+function updateStatus(name, status) {
+  const client = DATA.clients.find(c => c.name === name);
+  if (!client) return;
+  client.status = status;
+  
+  // 更新active列表
+  DATA.active = DATA.clients.filter(c => c.status);
+  
+  // 重新渲染统计
+  renderStats();
+  
+  // 如果当前在today tab，重新渲染
+  if (document.querySelector('.tab.active')?.textContent === '今日作战') {
+    renderTab('today');
+  }
+  
+  // 如果当前在clients tab，重新渲染
+  if (document.querySelector('.tab.active')?.textContent === '客户档案') {
+    renderTab('clients');
+  }
+}
+
 </script>
 </body>
 </html>
