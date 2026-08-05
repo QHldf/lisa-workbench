@@ -1,0 +1,26 @@
+name: Deploy to Huawei Cloud OBS
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - '.github/workflows/deploy-obs.yml'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Configure OBS
+        env:
+          OBS_AK: ${{ secrets.OBS_AK }}
+          OBS_SK: ${{ secrets.OBS_SK }}
+        run: |
+          wget -q https://obs-community.obs.cn-north-1.myhuaweicloud.com/obsutil/current/obsutil_linux_amd64.tar.gz
+          tar xzf obsutil_linux_amd64.tar.gz
+          OBSUTIL=$(find . -name "obsutil" -type f)
+          $OBSUTIL config -i="$OBS_AK" -k="$OBS_SK" -e="https://obs.cn-east-3.myhuaweicloud.com"
+          $OBSUTIL cp index.html obs://lisa-workbench/index.html -f
+          $OBSUTIL chattri obs://lisa-workbench/index.html -acl=public-read
