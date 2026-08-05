@@ -347,43 +347,97 @@ function runMatch() {
   const rates = DATA.rules.rates || {};
   const tierBonus = { T1: 15, T2: 8, T3: 3, T4: 1 };
 
+  // ========== 银行知识库规则融入 ==========
+  // 规则三：征信审批底线
   const riskFatal = [];
   const riskWarn = [];
+  if (overdueCont > 0) riskFatal.push('当前逾期：直接拒');
   if (overdueCont >= 3 || overdueCum >= 6) riskFatal.push('连三累六：命中致命红线');
-  if (cc > 90) riskWarn.push('信用卡使用率 > 90%');
-  if (income > 0 && debt > 0 && debt / income > 0.5) riskWarn.push('销贷比 > 50%');
-  if (q6 > 12) riskWarn.push('近6月查询 > 12次');
+  if (cc > 90) riskWarn.push('信用卡使用率 > 90%（建议降至50%以下）');
+  if (income > 0 && debt > 0 && debt / income > 0.5) riskWarn.push('销贷比 > 50%（工行制造e贷硬性红线）');
+  if (q6 > 12 && !hasTech) riskWarn.push('近6月查询 > 12次且无科技标签：多数银行拒');
+  if (instCount > 5 && !hasTech) riskWarn.push('机构数 > 5家且无科技标签：大行产品受限');
+  
+  // 规则五：销贷比计算（考虑个人流水）
+  const totalIncome = income; // 假设income已包含对公+个人
+  const debtRatio = totalIncome > 0 ? debt / totalIncome : 0;
+  
+  // 规则七：年龄红线
+  if (age > 65) {
+    riskWarn.push('法人年龄 > 65岁：优先推工行（企业名义可到70岁）');
+  } else if (age > 60) {
+    riskWarn.push('法人年龄 > 60岁：避开宁波银行税贷（上限60岁）');
+  }
 
   let resultHtml = '';
   riskFatal.forEach(r => resultHtml += `<div class="risk-fatal">❌ ${r}</div>`);
   riskWarn.forEach(r => resultHtml += `<div class="risk-warn">⚠️ ${r}</div>`);
 
+  // 规则十二：不同类型企业第一推荐行
+  let firstChoiceBanks = [];
+  if (hasTech) {
+    firstChoiceBanks = ['工商银行', '中国银行']; // 科技型=工行科创贷/中行科创贷
+  }
+  
   const matches = [];
   DATA.products.forEach(p => {
     if (exclude.some(e => p.bank.includes(e))) return;
+    
+    // 硬性条件过滤
     if (p.max_age && age > p.max_age) return;
     if (p.min_age && age < p.min_age) return;
     if (p.tech_required && !hasTech) return;
-    if (p.inst_max && instCount > p.inst_max) return;
-    if (p.query_6m_max && q6 > p.query_6m_max) return;
-    if (p.query_3m_max && q3 > p.query_3m_max) return;
+    if (p.inst_max && instCount > p.inst_max && !hasTech) return; // 有科技标签可豁免机构数
+    if (p.query_6m_max && q6 > p.query_6m_max && !hasTech) return; // 有科技标签可豁免查询
+    if (p.query_3m_max && q3 > p.query_3m_max && !hasTech) return;
     if (p.min_tax && tax < p.min_tax / 10000) return;
     if (p.dual_sign_required && !dual) return;
     if (p.tax_grades && p.tax_grades.length && taxGrade && !p.tax_grades.includes(taxGrade)) return;
-
+    
+    // 规则四：机构数精细统计 - 消费金融/小贷是大行负面信号
+    // 这里简化处理，实际应该检查具体机构类型
+    
+    // 基础分数
     let score = 50;
+    
+    // 银行层级加分（规则九：杭州本地银行审批尺度）
     score += tierBonus[tiers[p.bank]] || 0;
-    if (hasTech && p.tech_required) score += 10;
+    
+    // 科技标签匹配（规则十一：科技标签强>经营数据大）
+    if (hasTech && p.tech_required) score += 15;
+    if (hasTech && p.tag_pref && (p.tag_pref.includes('国高新') || p.tag_pref.includes('专精特新'))) score += 10;
+    
+    // 纳税等级加分
     if (taxGrade === 'A') score += 5;
+    
+    // 查询次数减分
     if (q6 <= 6) score += 5;
-    score -= Math.min(instCount * 2, 20);
-    score -= Math.min(q6, 15);
+    else if (q6 > 12) score -= 10;
+    
+    // 机构数减分（有科技标签可豁免）
+    if (!hasTech) {
+      score -= Math.min(instCount * 2, 20);
+    }
+    
+    // 销贷比减分（规则五：≤50%为工行制造e贷硬性红线）
+    if (debtRatio > 0.5) score -= 15;
+    else if (debtRatio > 0.3) score -= 5;
+    
+    // 利率优势加分
+    if (p.rate_min && p.rate_min < 3.5) score += 5;
+    
+    // 第一推荐行加分（规则十二）
+    if (firstChoiceBanks.includes(p.bank)) score += 8;
+    
+    // 规则十：负债整合优化 - 有抵押物的走抵押低息置换
+    if (p.type && p.type.includes('抵押') && debt > 500) score += 5;
 
     const reasons = [];
     if (tiers[p.bank]) reasons.push(tiers[p.bank] + '层级');
     if (rates[p.bank]) reasons.push('获贷率' + rates[p.bank]);
-    if (p.tech_required && hasTech) reasons.push('科技匹配');
+    if (p.tech_required && hasTech) reasons.push('科技标签匹配');
     if (p.rate_min) reasons.push('利率' + p.rate_min + '%起');
+    if (firstChoiceBanks.includes(p.bank)) reasons.push('优先推荐行');
 
     matches.push({
       bank: p.bank, product: p.product, rate: p.rate,
@@ -392,7 +446,16 @@ function runMatch() {
     });
   });
 
+  // 按分数排序
   matches.sort((a, b) => b.score - a.score);
+  
+  // 规则十：负债整合优化提示
+  if (debt > 300 && instCount > 5) {
+    resultHtml += `<div style="background:#fff3e0;padding:8px;margin:8px 0;border-radius:4px;font-size:12px">
+      💡 <strong>负债整合建议：</strong>当前负债${debt}万/机构数${instCount}家，建议用一笔大额低息贷款置换多笔高息小额贷款，降利息、减月供、养征信
+    </div>`;
+  }
+  
   const top = matches.slice(0, 15);
 
   if (top.length) {
